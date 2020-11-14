@@ -4,11 +4,14 @@
   border: 0px;
 
 }
-nav{
-  margin: 0px;
-}
-ul{
-  padding-top: 5px;
+
+.navbar .nav > ul{
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 }
 
 
@@ -16,62 +19,56 @@ ul{
   margin: 0px;
 }
 .navbar .nav{
+  padding: 6.30px;
   float: none;
   text-align: center;
 }
 .navbar .nav > li{
+  padding: 3px;
   float: none;
   display: inline-block;
+  text-align: center;
 }
 .navbar-default {
   background: #3FA9F5;
 }
 
-.navbar-default .navbar-nav > .active > a:hover {
-  background-color: #3FA9F5;
-  font-family: Helvetica, sans-serif;
-  font-size: 11px;
-  font-weight: bold;
-  text-shadow: 0px 0px rgb(0,0,0);
-  text-decoration: none;
-  padding-top:5px !important;
-  padding-bottom:5px !important;
-  padding-left: 2px;
-  padding-right: 2px;
-  outline: 0;
-  color: #3E4B5D;
-}
-
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:focus {
-  background-color: #3FA9F5;
-  font-family: Helvetica, sans-serif;
-  font-size: 11px;
-  font-weight: bold;
-  text-shadow: 0px 0px rgb(0,0,0);
-  text-decoration: none;
-  color: rgb(255,255,255);
-  padding-top:5px !important;
-  padding-bottom:5px !important;
-  padding-left: 2px;
-  padding-right: 2px;
-  outline: 0;
-}
 .navbar-default .navbar-nav > .button> a:hover{
+  font-size: 11px;
+  font-weight: bold;
+  text-shadow: 0px 0px rgb(0,0,0);
+  text-decoration: none;
   color: black;
+  padding-top:5px !important;
+  padding-bottom:5px !important;
+  padding-left: 2px;
+  padding-right: 2px;
+  outline: 0;
 }
 
-.navbar-default .navbar-nav > .button> a,
-/*.navbar-default .navbar-nav > .currently-selected > a:hover,*/
+.navbar-default .navbar-nav > .button> a {
+  background-color: #3FA9F5;
+  font-family: Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  text-shadow: 0px 0px rgb(0,0,0);
+  text-decoration: none;
+  color: white;
+  padding-top:5px !important;
+  padding-bottom:5px !important;
+  padding-left: 2px;
+  padding-right: 2px;
+  outline: 0;
+}
+
 .navbar-default .navbar-nav > .button > a:focus {
   background-color: #3FA9F5;
   font-family: Helvetica, sans-serif;
   font-size: 11px;
   font-weight: bold;
-  text-shadow: 0px 0px rgb(0,0,0);
+  /*text-shadow: 0px 0px rgb(0,0,0);*/
   text-decoration: none;
-  /*color: #3E4B5D;*/
-  color: white;
+  color: black;
   padding-top:5px !important;
   padding-bottom:5px !important;
   padding-left: 2px;
