@@ -16,7 +16,8 @@ import { PublicPollsComponent } from './public-polls/public-polls.component';
     HelpComponent,
     AboutComponent,
     MoreComponent,
-    PublicPollsComponent
+    PublicPollsComponent,
+
   ],
   imports: [
     BrowserModule,
