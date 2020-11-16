@@ -23,14 +23,32 @@
   margin-top: 25px;
   margin-bottom: 25px;
 }
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+@media (min-width: 992px) {
+  .col-md-9 {
+    width: 75%;
+    float: left;
+  }
+}
 .row {
   margin-right: -15px;
   margin-left: -15px;
 }
 
-@media (min-width: 992px){
-  .col-md-3{
-    /*float: left;*/
-    width: 25%;
-  }
+.media-object{
+  display: block;
+}
+.generic_title_orange {
+  margin-top: 48px;
+  margin-left: 0;
+  font-family: days-font;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ff9e13;
 }
