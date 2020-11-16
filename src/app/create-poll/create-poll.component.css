@@ -1,0 +1,46 @@
+/*.element.style {*/
+/*  margin-bottom: 50px;*/
+/*}*/
+div{
+  display: block;
+}
+.main_content_frame {
+  max-width: 768px;
+  width: 90%;
+  margin: 0 auto;
+  position: absolute;
+
+}
+.main_content_frame{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  /*margin-left: 20px;*/
+  /*margin-right: 20px;*/
+  /*margin-bottom: 25px;*/
+  margin-top: 25px;
+  background-color: rgb(62,75,93);
+  border: solid 2px rgb(111,120,134);
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+}
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+@media (min-width: 992px){
+  .col-md-3{
+    /*float: left;*/
+    width: 25%;
+  }
+}
