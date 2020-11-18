@@ -1,0 +1,29 @@
+.media-left {
+  padding: 0px 10px 0px 0px;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+@media (min-width: 992px) {
+  .col-md-9 {
+    width: 75%;
+    float: left;
+  }
+}
+
+.media-object {
+  display: block;
+}
+
+@font-face {
+  font-family: "days-font";
+  src: url("src/assets/fonts/Days-webfont.ttf");
+}
+
+.col-md-3 {
+  padding: 0px 15px 0px 0px;
+}
+

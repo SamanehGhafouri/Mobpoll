@@ -8,6 +8,7 @@ import { HelpComponent } from './help/help.component';
 import { AboutComponent } from './about/about.component';
 import { MoreComponent } from './more/more.component';
 import { PublicPollsComponent } from './public-polls/public-polls.component';
+import { FormHeaderComponent } from './form-header/form-header.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { PublicPollsComponent } from './public-polls/public-polls.component';
     AboutComponent,
     MoreComponent,
     PublicPollsComponent,
+    FormHeaderComponent,
 
   ],
   imports: [
