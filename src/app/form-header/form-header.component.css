@@ -1,4 +1,59 @@
-.media-left {
+/*.media-left {*/
+/*  padding: 0px 10px 0px 0px;*/
+/*}*/
+
+/*img {*/
+/*  vertical-align: middle;*/
+/*  border-style: none;*/
+/*}*/
+
+/*@media (min-width: 992px) {*/
+/*  .col-md-9 {*/
+/*    width: 75%;*/
+/*    float: left;*/
+/*  }*/
+/*}*/
+
+/*.media-object {*/
+/*  display: block;*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: "days-font";*/
+/*  src: url("src/assets/fonts/Days-webfont.ttf");*/
+/*}*/
+
+/*.col-md-3 {*/
+/*  padding: 0px 15px 0px 0px;*/
+/*}*/
+
+.element.style {
+  margin-bottom: 50px;
+}
+
+.main_content_frame {
+  max-width: 768px;
+  width: 90%;
+  margin-top: 0;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgb(62,75,93);
+  border: solid 2px rgb(111,120,134);
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  padding: 0px 20px 20px 20px;
+
+}
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.media-left{
   padding: 0px 10px 0px 0px;
 }
 
@@ -6,24 +61,41 @@ img {
   vertical-align: middle;
   border-style: none;
 }
-
 @media (min-width: 992px) {
   .col-md-9 {
     width: 75%;
     float: left;
   }
 }
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
 
-.media-object {
+.media-object{
   display: block;
 }
-
 @font-face {
-  font-family: "days-font";
-  src: url("src/assets/fonts/Days-webfont.ttf");
+  font-family: "days-font"; src: url("src/assets/fonts/Days-webfont.ttf");
 }
 
-.col-md-3 {
+.generic_title_orange {
+  margin-top: 48px;
+  margin-left: 0;
+  font-family: days-font;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ff9e13;
+}
+.col-md-9{
+  padding-left: 0px;
+
+}
+.col-md-3{
   padding: 0px 15px 0px 0px;
 }
-
+label{
+  margin-bottom: 5px;
+}

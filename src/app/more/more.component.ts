@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-more',
   templateUrl: './more.component.html',
-  styleUrls: ['./more.component.css']
+  styleUrls: ['../form-header/form-header.component.css', './more.component.css']
 })
 export class MoreComponent implements OnInit {
 
