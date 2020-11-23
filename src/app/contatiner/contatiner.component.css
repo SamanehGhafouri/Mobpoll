@@ -79,7 +79,7 @@ img {
   font-family: "days-font"; src: url("src/assets/fonts/Days-webfont.ttf");
 }
 
-.generic_title_orange {
+.generic_title {
   margin-top: 48px;
   margin-left: 0;
   font-family: days-font;
@@ -87,7 +87,7 @@ img {
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #ff9e13;
+  /*color: #ff9e13;*/
 }
 .col-md-9{
   padding-left: 0px;
