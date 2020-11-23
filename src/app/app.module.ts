@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { MoreComponent } from './more/more.component';
 import { PublicPollsComponent } from './public-polls/public-polls.component';
 import { FormHeaderComponent } from './form-header/form-header.component';
+import { ContatinerComponent } from './contatiner/contatiner.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FormHeaderComponent } from './form-header/form-header.component';
     MoreComponent,
     PublicPollsComponent,
     FormHeaderComponent,
+    ContatinerComponent,
 
   ],
   imports: [
