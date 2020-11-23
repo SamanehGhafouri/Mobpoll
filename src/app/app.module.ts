@@ -8,7 +8,6 @@ import { HelpComponent } from './help/help.component';
 import { AboutComponent } from './about/about.component';
 import { MoreComponent } from './more/more.component';
 import { PublicPollsComponent } from './public-polls/public-polls.component';
-import { FormHeaderComponent } from './form-header/form-header.component';
 import { ContatinerComponent } from './contatiner/contatiner.component';
 import { CreatePollFormComponent } from './create-poll-form/create-poll-form.component';
 
@@ -20,7 +19,6 @@ import { CreatePollFormComponent } from './create-poll-form/create-poll-form.com
     AboutComponent,
     MoreComponent,
     PublicPollsComponent,
-    FormHeaderComponent,
     ContatinerComponent,
     CreatePollFormComponent,
 
