@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-poll.component.css']
 })
 export class CreatePollComponent implements OnInit {
-  myMessage = "Create Poll";
+  createPollMessage = "Create a custom poll";
 
   constructor() { }
 
