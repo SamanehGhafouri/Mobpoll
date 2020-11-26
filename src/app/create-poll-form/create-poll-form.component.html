@@ -198,31 +198,46 @@
 <!--  </div>-->
 
 <!--</form>-->
-<form [formGroup]="createPollForm">
-  <div class="form-group">
-    <label>
-      Enter poll question
-      <input placeholder="Your poll question" formControlName="enterPollQuestion">
-    </label>
-    <label>
-      Enter option 1
-      <input placeholder="Your poll option" formControlName="optionOne">
-    </label>
-    <label>
-      Enter option 2
-      <input placeholder="Your poll option" formControlName="optionTwo">
-    </label>
-    <label>
-      Enter option 3
-      <input placeholder="Your poll option" formControlName="optionThree">
-    </label>
-    <label>
-      Enter option 4
-      <input placeholder="Your poll option" formControlName="optionFour">
-    </label>
-    <label>
-      Enter option 5
-      <input placeholder="Your poll option" formControlName="optionFive">
-    </label>
-  </div>
-</form>
+<div>
+  <form [formGroup]="createPollForm">
+    <div class="form-group">
+      <div class="form_item_spacer">
+        <label>
+          <span style="color: white">Enter</span>
+          <span style="color: #FF9E13">poll question</span>
+          <span></span>
+          <input type="text" placeholder="Your poll question" formControlName="enterPollQuestion">
+        </label>
+      </div>
+      <label>
+        <span>Enter</span>
+        <span>option 1</span>
+        <span></span>
+        <input placeholder="Your poll option" formControlName="optionOne">
+      </label>
+      <label>
+        <span>Enter</span>
+        <span>option 2</span>
+        <span></span>
+        <input placeholder="Your poll option" formControlName="optionTwo">
+      </label>
+      <label>
+        <span>Enter</span>
+        <span>option 3</span>
+        <input placeholder="Your poll option" formControlName="optionThree">
+      </label>
+      <label>
+        <span>Enter</span>
+        <span>option 4</span>
+        <input placeholder="Your poll option" formControlName="optionFour">
+      </label>
+      <label>
+        <span>Enter</span>
+        <span>option 5</span>
+        <input placeholder="Your poll option" formControlName="optionFive">
+      </label>
+    </div>
+
+  </form>
+
+</div>
