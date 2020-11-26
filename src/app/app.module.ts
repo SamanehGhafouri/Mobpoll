@@ -10,6 +10,7 @@ import { MoreComponent } from './more/more.component';
 import { PublicPollsComponent } from './public-polls/public-polls.component';
 import { ContatinerComponent } from './contatiner/contatiner.component';
 import { CreatePollFormComponent } from './create-poll-form/create-poll-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,10 +23,12 @@ import { CreatePollFormComponent } from './create-poll-form/create-poll-form.com
     ContatinerComponent,
     CreatePollFormComponent,
 
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
