@@ -198,44 +198,62 @@
 <!--  </div>-->
 
 <!--</form>-->
+<!--------------------------------------------------------------------------------------------------------------->
 <div>
   <form [formGroup]="createPollForm">
     <div class="form-group">
       <div class="form_item_spacer">
-        <label>
+        <label class="control-label form_label_text">
           <span style="color: white">Enter</span>
-          <span style="color: #FF9E13">poll question</span>
+          <span style="color: #FF9E13; margin-left: 5px">Poll question</span>
           <span></span>
-          <input type="text" placeholder="Your poll question" formControlName="enterPollQuestion">
         </label>
+        <input type="text" placeholder="Your poll question" formControlName="enterPollQuestion"
+               class="form-control form_input_field">
       </div>
-      <label>
-        <span>Enter</span>
-        <span>option 1</span>
-        <span></span>
-        <input placeholder="Your poll option" formControlName="optionOne">
-      </label>
-      <label>
-        <span>Enter</span>
-        <span>option 2</span>
-        <span></span>
-        <input placeholder="Your poll option" formControlName="optionTwo">
-      </label>
-      <label>
-        <span>Enter</span>
-        <span>option 3</span>
-        <input placeholder="Your poll option" formControlName="optionThree">
-      </label>
-      <label>
-        <span>Enter</span>
-        <span>option 4</span>
-        <input placeholder="Your poll option" formControlName="optionFour">
-      </label>
-      <label>
-        <span>Enter</span>
-        <span>option 5</span>
-        <input placeholder="Your poll option" formControlName="optionFive">
-      </label>
+      <div class="form_item_spacer">
+        <label class="control-label form_label_text">
+          <span>Enter</span>
+          <span>option 1</span>
+          <span></span>
+        </label>
+        <div style="display: table; width: 100%">
+          <input placeholder="Your poll option" formControlName="optionOne" class="form-control form_input_field">
+        </div>
+      </div>
+      <div class="form_item_spacer">
+        <label class="control-label form_label_text">
+          <span>Enter</span>
+          <span>option 2</span>
+          <span></span>
+        </label>
+          <input placeholder="Your poll option" formControlName="optionTwo" class="form-control form_input_field">
+
+      </div>
+      <div class="form_item_spacer">
+        <label class="control-label form_label_text">
+          <span>Enter</span>
+          <span>option 3</span>
+        </label>
+          <input placeholder="Your poll option" formControlName="optionThree" class="form-control form_input_field">
+
+      </div>
+      <div class="form_item_spacer">
+        <label class="control-label form_label_text">
+          <span>Enter</span>
+          <span>option 4</span>
+        </label>
+          <input placeholder="Your poll option" formControlName="optionFour" class="form-control form_input_field">
+
+      </div>
+      <div class="form_item_spacer">
+        <label class="control-label form_label_text">
+          <span>Enter</span>
+          <span>option 5</span>
+        </label>
+          <input placeholder="Your poll option" formControlName="optionFive" class="form-control form_input_field">
+
+      </div>
     </div>
 
   </form>
