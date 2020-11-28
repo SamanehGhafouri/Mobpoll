@@ -213,18 +213,38 @@
       </div>
       <div class="form_item_spacer">
         <label class="control-label form_label_text">
-          <span>Enter</span>
-          <span>option 1</span>
+          <span style="color: white">Enter</span>
+          <span style="margin-left: 5px">option 1</span>
           <span></span>
         </label>
         <div style="display: table; width: 100%">
+          <div class="create-poll-option-text-input-div">
           <input placeholder="Your poll option" formControlName="optionOne" class="form-control form_input_field">
+          </div>
+          <div class="create-poll-option-image-input-div">
+            <input type="file"
+                   class="image-asset-file-system-upload"
+                   name="image" id="image-asset-file-system-upload-1" style="position: fixed; top: -1000px">
+            <input type="button" value="Choose File">
+            <a href="#">
+              <div class="poll-option-image" id="poll-option-image-1"
+                   style="
+                                     -webkit-clip-path: circle(50% at 50% 50%);
+                                     border-radius: 50%;
+                                     clip-path: circle(50% at 50% 50%);
+                                     background-image: url('src/assets/upload-pic-icon-orange.png');
+                                     background-size: cover; background-repeat: no-repeat;
+                                     background-position: 50% 50%; height: 32px; width: 32px; float: right;">
+
+              </div>
+            </a>
+          </div>
         </div>
       </div>
       <div class="form_item_spacer">
         <label class="control-label form_label_text">
-          <span>Enter</span>
-          <span>option 2</span>
+          <span style="color: white">Enter</span>
+          <span style="margin-left: 5px">option 2</span>
           <span></span>
         </label>
           <input placeholder="Your poll option" formControlName="optionTwo" class="form-control form_input_field">
@@ -232,7 +252,7 @@
       </div>
       <div class="form_item_spacer">
         <label class="control-label form_label_text">
-          <span>Enter</span>
+          <span style="color: white">Enter</span>
           <span>option 3</span>
         </label>
           <input placeholder="Your poll option" formControlName="optionThree" class="form-control form_input_field">
@@ -240,16 +260,16 @@
       </div>
       <div class="form_item_spacer">
         <label class="control-label form_label_text">
-          <span>Enter</span>
-          <span>option 4</span>
+          <span style="color: white">Enter</span>
+          <span style="margin-left: 5px">option 4</span>
         </label>
           <input placeholder="Your poll option" formControlName="optionFour" class="form-control form_input_field">
 
       </div>
       <div class="form_item_spacer">
         <label class="control-label form_label_text">
-          <span>Enter</span>
-          <span>option 5</span>
+          <span style="color: white">Enter</span>
+          <span style="margin-left: 5px">option 5</span>
         </label>
           <input placeholder="Your poll option" formControlName="optionFive" class="form-control form_input_field">
 
