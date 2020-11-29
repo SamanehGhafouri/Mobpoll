@@ -199,83 +199,107 @@
 
 <!--</form>-->
 <!--------------------------------------------------------------------------------------------------------------->
-<div>
-  <form [formGroup]="createPollForm">
-    <div class="form-group">
-      <div class="form_item_spacer">
-        <label class="control-label form_label_text">
-          <span style="color: white">Enter</span>
-          <span style="color: #FF9E13; margin-left: 5px">Poll question</span>
-          <span></span>
-        </label>
-        <input type="text" placeholder="Your poll question" formControlName="enterPollQuestion"
-               class="form-control form_input_field">
-      </div>
-      <div class="form_item_spacer">
-        <label class="control-label form_label_text">
-          <span style="color: white">Enter</span>
-          <span style="margin-left: 5px">option 1</span>
-          <span></span>
-        </label>
-        <div style="display: table; width: 100%">
-          <div class="create-poll-option-text-input-div">
-          <input placeholder="Your poll option" formControlName="optionOne" class="form-control form_input_field">
-          </div>
-          <div class="create-poll-option-image-input-div">
-            <input type="file"
-                   class="image-asset-file-system-upload"
-                   name="image" id="image-asset-file-system-upload-1" style="position: fixed; top: -1000px">
-            <input type="button" value="Choose File">
-            <a href="#">
-              <div class="poll-option-image" id="poll-option-image-1"
-                   style="
-                                     -webkit-clip-path: circle(50% at 50% 50%);
-                                     border-radius: 50%;
-                                     clip-path: circle(50% at 50% 50%);
-                                     background-image: url('src/assets/upload-pic-icon-orange.png');
-                                     background-size: cover; background-repeat: no-repeat;
-                                     background-position: 50% 50%; height: 32px; width: 32px; float: right;">
+<!--<div>-->
+<!--  <form [formGroup]="createPollForm">-->
+<!--    <div class="form-group">-->
+<!--      <div class="form_item_spacer">-->
+<!--        <label class="control-label form_label_text">-->
+<!--          <span style="color: white">Enter</span>-->
+<!--          <span style="color: #FF9E13; margin-left: 5px">Poll question</span>-->
+<!--          <span></span>-->
+<!--        </label>-->
+<!--        <input type="text" placeholder="Your poll question" formControlName="enterPollQuestion"-->
+<!--               class="form-control form_input_field">-->
+<!--      </div>-->
+<!--      <div class="form_item_spacer">-->
+<!--        <label class="control-label form_label_text">-->
+<!--          <span style="color: white">Enter</span>-->
+<!--          <span style="margin-left: 5px">option 1</span>-->
+<!--          <span></span>-->
+<!--        </label>-->
+<!--        <div style="display: table; width: 100%">-->
+<!--          <div class="create-poll-option-text-input-div">-->
+<!--            <input placeholder="Your poll option" formControlName="optionOne" class="form-control form_input_field">-->
+<!--          </div>-->
+<!--          <div class="create-poll-option-image-input-div">-->
+<!--            <input type="file"-->
+<!--                   class="image-asset-file-system-upload"-->
+<!--                   name="image" id="image-asset-file-system-upload-1" style="position: fixed; top: -1000px;">-->
+<!--            <input type="button" value="Choose File"class="poll-option-image" id="poll-option-image-1"-->
+<!--                   style="">-->
 
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="form_item_spacer">
-        <label class="control-label form_label_text">
-          <span style="color: white">Enter</span>
-          <span style="margin-left: 5px">option 2</span>
-          <span></span>
-        </label>
-          <input placeholder="Your poll option" formControlName="optionTwo" class="form-control form_input_field">
+<!--&lt;!&ndash;              <div class="poll-option-image" id="poll-option-image-1"&ndash;&gt;-->
+<!--&lt;!&ndash;                   style="&ndash;&gt;-->
+<!--&lt;!&ndash;                   -webkit-clip-path: circle(50% at 50% 50%);&ndash;&gt;-->
+<!--&lt;!&ndash;                   border-radius: 50%;&ndash;&gt;-->
+<!--&lt;!&ndash;                   clip-path: circle(50% at 50% 50%);&ndash;&gt;-->
+<!--&lt;!&ndash;                   background-image: url('assets/upload-pic-icon-orange.png');&ndash;&gt;-->
+<!--&lt;!&ndash;                   background-size: cover; background-repeat: no-repeat;&ndash;&gt;-->
+<!--&lt;!&ndash;                   background-position: 50% 50%; height: 32px; width: 32px; float: right;">&ndash;&gt;-->
 
-      </div>
-      <div class="form_item_spacer">
-        <label class="control-label form_label_text">
-          <span style="color: white">Enter</span>
-          <span>option 3</span>
-        </label>
-          <input placeholder="Your poll option" formControlName="optionThree" class="form-control form_input_field">
+<!--&lt;!&ndash;              </div>&ndash;&gt;-->
 
-      </div>
-      <div class="form_item_spacer">
-        <label class="control-label form_label_text">
-          <span style="color: white">Enter</span>
-          <span style="margin-left: 5px">option 4</span>
-        </label>
-          <input placeholder="Your poll option" formControlName="optionFour" class="form-control form_input_field">
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="form_item_spacer">-->
+<!--        <label class="control-label form_label_text">-->
+<!--          <span style="color: white">Enter</span>-->
+<!--          <span style="margin-left: 5px">option 2</span>-->
+<!--          <span></span>-->
+<!--        </label>-->
+<!--        <input placeholder="Your poll option" formControlName="optionTwo" class="form-control form_input_field">-->
+<!--      </div>-->
+<!--      <div class="form_item_spacer">-->
+<!--        <label class="control-label form_label_text">-->
+<!--          <span style="color: white">Enter</span>-->
+<!--          <span>option 3</span>-->
+<!--        </label>-->
+<!--        <input placeholder="Your poll option" formControlName="optionThree" class="form-control form_input_field">-->
 
-      </div>
-      <div class="form_item_spacer">
-        <label class="control-label form_label_text">
-          <span style="color: white">Enter</span>
-          <span style="margin-left: 5px">option 5</span>
-        </label>
-          <input placeholder="Your poll option" formControlName="optionFive" class="form-control form_input_field">
+<!--      </div>-->
+<!--      <div class="form_item_spacer">-->
+<!--        <label class="control-label form_label_text">-->
+<!--          <span style="color: white">Enter</span>-->
+<!--          <span style="margin-left: 5px">option 4</span>-->
+<!--        </label>-->
+<!--        <input placeholder="Your poll option" formControlName="optionFour" class="form-control form_input_field">-->
 
-      </div>
-    </div>
+<!--      </div>-->
+<!--      <div class="form_item_spacer">-->
+<!--        <label class="control-label form_label_text">-->
+<!--          <span style="color: white">Enter</span>-->
+<!--          <span style="margin-left: 5px">option 5</span>-->
+<!--        </label>-->
+<!--        <input placeholder="Your poll option" formControlName="optionFive" class="form-control form_input_field">-->
 
-  </form>
+<!--      </div>-->
+<!--    </div>-->
 
-</div>
+<!--  </form>-->
+
+<!--</div>-->
+<!---------------------------------------------------------------------------------------------------------------->
+<form [formGroup]="mainForm">
+  <label>
+    <span>Enter</span>
+    <span>Poll Question</span>
+    <span></span>
+  </label>
+    <input type="text" formControlName="enterPollQuestion" placeholder="Your poll question">
+  <div *ngFor="let option of mainForm.value.options; index as i;">
+    <label>
+      <span>Enter</span>
+      <span>Option {{i + 1}}</span>
+    </label>
+    <input type="text" placeholder="Your poll option">
+    <input type="file" placeholder="click">
+  </div>
+  <a (click)="addOption()" style="cursor: pointer">
+    <span>+</span>
+    <span>Add</span>
+    <span>Option</span>
+  </a>
+
+
+</form>

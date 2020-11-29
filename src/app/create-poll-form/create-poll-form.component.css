@@ -71,3 +71,20 @@ input{
 
 }
 
+/*-----------------------------------------------*/
+
+.create-poll-option-text-input-div{
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+.create-poll-option-image-input-div{
+  display: table-cell;
+  float: right;
+  vertical-align: middle;
+}
+a{
+  color: #337ab7;
+  text-decoration: none;
+}
