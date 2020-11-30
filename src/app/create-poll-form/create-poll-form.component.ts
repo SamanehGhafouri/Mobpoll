@@ -40,6 +40,13 @@ export class CreatePollFormComponent implements OnInit {
     }
   }
 
+  createPoll(){
+
+  }
+  uploadImage(){
+
+  }
+
   ngOnInit(): void {
   }
 

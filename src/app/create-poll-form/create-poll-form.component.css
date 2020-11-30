@@ -83,8 +83,40 @@ input{
   display: table-cell;
   float: right;
   vertical-align: middle;
+
+
 }
 a{
   color: #337ab7;
   text-decoration: none;
+}
+.submit-button{
+  bottom: 0;
+  margin-top: 10px;
+  padding: 6px 15px;
+  color: #fff;
+  font-family: days-font;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  border: 2px solid #707785;
+  background-color: #3e4b5d;
+}
+
+.form-options{
+  display: table;
+}
+.ccp-form-add-option-link{
+  text-transform: uppercase;
+  font-family: days-font;
+  font-style: normal;
+  font-size: 12px;
+  text-decoration: none;
+}
+.ccp-form-add-plus-sign{
+  color: #ff9e13;
+  font-size: 14px;
 }

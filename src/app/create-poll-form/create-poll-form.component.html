@@ -281,25 +281,46 @@
 <!--</div>-->
 <!---------------------------------------------------------------------------------------------------------------->
 <form [formGroup]="mainForm">
-  <label>
-    <span>Enter</span>
-    <span>Poll Question</span>
-    <span></span>
-  </label>
-    <input type="text" formControlName="enterPollQuestion" placeholder="Your poll question">
-  <div *ngFor="let option of mainForm.value.options; index as i;">
-    <label>
-      <span>Enter</span>
-      <span>Option {{i + 1}}</span>
-    </label>
-    <input type="text" placeholder="Your poll option">
-    <input type="file" placeholder="click">
-  </div>
-  <a (click)="addOption()" style="cursor: pointer">
-    <span>+</span>
-    <span>Add</span>
-    <span>Option</span>
-  </a>
+  <div class="form-group">
+    <div class="form_item_spacer">
+      <label class="control-label form_label_text">
+        <span style="color: white">Enter</span>
+        <span style="color: #FF9E13; margin-left: 5px">Poll Question</span>
+        <span></span>
+      </label>
+      <input type="text" formControlName="enterPollQuestion" placeholder="Your poll question"
+             class="form-control form_input_field">
+    </div>
 
+    <div *ngFor="let option of mainForm.value.options; index as i;">
+      <label class="control-label form_label_text">
+        <span style="color: white">Enter</span>
+        <span style="color: #FF9E13; margin-left: 5px">Option {{i + 1}}</span>
+      </label>
+      <div style="display: table; width: 100%" class="form_item_spacer">
+        <div class="create-poll-option-text-input-div for">
+          <input type="text" placeholder="Your poll option" class="form-control form_input_field">
+        </div>
+        <div class="create-poll-option-image-input-div">
+          <label for="file-input">
+            <img src="assets/upload-pic-icon-orange.png" style="cursor: pointer">
+          </label>
+          <input type="file" id="file-input" hidden>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <a (click)="addOption()" style="cursor: pointer" class="ccp-form-add-option-link">
+        <span class="ccp-form-add-plus-sign">+</span>
+        <span style="color: white; margin-left: 5px">Add</span>
+        <span style="color:#FF9E13; margin-left: 5px">Option</span>
+      </a>
+    </div>
+    <div class="form-group">
+      <input type="submit" (click)="createPoll()" value="Create Poll" class="submit-button">
+    </div>
+  </div>
 
 </form>
