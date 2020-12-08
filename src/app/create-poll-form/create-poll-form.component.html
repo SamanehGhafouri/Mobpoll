@@ -286,7 +286,7 @@
       <label class="control-label form_label_text">
         <span style="color: white">Enter</span>
         <span style="color: #FF9E13; margin-left: 5px">Poll Question</span>
-        <span></span>
+<!--        <span class="form-item-error-marker-hidden" id="create-poll-question-error-marker-id">X</span>-->
       </label>
       <input type="text" formControlName="enterPollQuestion" placeholder="Your poll question"
              class="form-control form_input_field">
@@ -319,7 +319,7 @@
       </a>
     </div>
     <div class="form-group">
-      <input type="submit" (click)="createPoll()" value="Create Poll" class="submit-button">
+      <input type="submit" (click)="createPoll()" value="Create Poll" class="submit-button" >
     </div>
   </div>
 

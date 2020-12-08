@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormArray, FormControl, FormGroup} from "@angular/forms";
+import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-create-poll-form',
@@ -8,16 +8,6 @@ import {FormArray, FormControl, FormGroup} from "@angular/forms";
 })
 export class CreatePollFormComponent implements OnInit {
   mainForm: FormGroup;
-
-  createPollForm = new FormGroup({
-    enterPollQuestion: new FormControl(''),
-    optionOne: new FormControl(''),
-    optionTwo: new FormControl(''),
-    optionThree: new FormControl(''),
-    optionFour: new FormControl(''),
-    optionFive: new FormControl(''),
-
-  })
 
   constructor() {
     this.mainForm = new FormGroup({
@@ -43,10 +33,6 @@ export class CreatePollFormComponent implements OnInit {
   createPoll(){
 
   }
-  uploadImage(){
-
-  }
-
   ngOnInit(): void {
   }
 
