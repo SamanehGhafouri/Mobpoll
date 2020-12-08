@@ -286,10 +286,11 @@
       <label class="control-label form_label_text">
         <span style="color: white">Enter</span>
         <span style="color: #FF9E13; margin-left: 5px">Poll Question</span>
-<!--        <span class="form-item-error-marker-hidden" id="create-poll-question-error-marker-id">X</span>-->
+        <span *ngIf="question.invalid && (question.touched || question.dirty)"
+              class="form-item-error">X</span>
       </label>
       <input type="text" formControlName="enterPollQuestion" placeholder="Your poll question"
-             class="form-control form_input_field">
+             class="form-control form_input_field" required>
     </div>
 <ng-container formArrayName="options">
     <div *ngFor="let op of options.controls; index as i">
