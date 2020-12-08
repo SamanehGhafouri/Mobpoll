@@ -7,11 +7,19 @@
 <div class="modal-content">
   <div class="modal-body">
     <!--  <p>Hello, {{name}}!</p>-->
-    <h4 class="modal-title">Form Error!</h4>
-    <ul>
-      <li>Poll Question: Question must have at least two words.</li>
-      <li>Poll Options: A minimum of 2 poll options are required.</li>
-    </ul>
+    <label class="modal-title">Form Error!</label>
+    <div class="alert-box-message">
+      <ul style="list-style-type: none">
+        <li style="list-style-type: none">
+          <span style="color: #FF9E13">Poll Question:</span>
+          <span style="color: #ffffff">Question must have at least two words.</span>
+        </li>
+        <li style="list-style-type: none">
+          <span style="color: #FF9E13">Poll Options:</span>
+          <span style="color: #ffffff">A minimum of 2 poll options are required.</span>
+        </li>
+      </ul>
+    </div>
     <button type="button"  style="position:absolute; left: 0;" (click)="activeModal.close('Close click')" >Okay</button>
   </div>
   <!--<div class="modal-footer">-->

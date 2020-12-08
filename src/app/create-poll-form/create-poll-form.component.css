@@ -126,3 +126,7 @@ a{
   color: red;
   margin-left: 5px
 }
+
+input .form-control .form_input_field.ng-touched.ng-invalid{
+  border-color: red;
+}
