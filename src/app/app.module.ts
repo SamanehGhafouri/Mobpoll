@@ -11,6 +11,7 @@ import { PublicPollsComponent } from './public-polls/public-polls.component';
 import { ContatinerComponent } from './contatiner/contatiner.component';
 import { CreatePollFormComponent } from './create-poll-form/create-poll-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { CreatePollSubmitWarningComponent } from './create-poll-submit-warning/create-poll-submit-warning.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,16 @@ import {ReactiveFormsModule} from "@angular/forms";
     PublicPollsComponent,
     ContatinerComponent,
     CreatePollFormComponent,
+    CreatePollSubmitWarningComponent,
+
 
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {CreatePollSubmitWarningComponent} from "../create-poll-submit-warning/create-poll-submit-warning.component";
 
 // Custom validation for poll question that needs to be at least 2 words
 function validateSize(form: FormControl) {
@@ -24,7 +26,9 @@ function validateSize(form: FormControl) {
 export class CreatePollFormComponent implements OnInit {
   mainForm: FormGroup;
 
-  constructor() {
+  constructor(private modalService: NgbModal) {}
+
+  ngOnInit(): void {
     this.mainForm = new FormGroup({
       enterPollQuestion : new FormControl('', [validateSize]),
       options: new FormArray([
@@ -33,7 +37,7 @@ export class CreatePollFormComponent implements OnInit {
         new FormControl(''),
         new FormControl(''),
         new FormControl('')
-        ])
+      ])
 
     });
   }
@@ -53,9 +57,44 @@ export class CreatePollFormComponent implements OnInit {
   }
 
   createPoll(){
+    // TODO: direct the valid form to the created form page and show details
+    if (this.mainForm.valid){
+      alert("form is created");
+    }
+    else {
+      const modalRef = this.modalService.open(CreatePollSubmitWarningComponent);
+      modalRef.componentInstance.name = 'World';
+
+      this.validateFormGroupField(this.mainForm);
+      this.validateFormArrayFields(this.options);
+
+    }
 
   }
-  ngOnInit(): void {
+  //Validating FormGroup Fields (question)
+  validateFormGroupField(formGroup: FormGroup){
+    Object.keys(formGroup.controls).forEach(field => {
+      const  control = formGroup.get(field);
+      if (control instanceof FormControl){
+        control.markAsTouched({onlySelf: true});
+      }
+      else if (control instanceof FormGroup) {
+        this.validateFormGroupField(control);
+      }
+    })
   }
+
+  //Validating FormArray Fields (options)
+  validateFormArrayFields(formGroup: FormArray) {
+    Object.keys(formGroup.controls).forEach(field => {
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+        control.markAsTouched({onlySelf: true});
+      } else if (control instanceof FormArray) {
+        this.validateFormArrayFields(control);
+      }
+    })
+  }
+
 
 }

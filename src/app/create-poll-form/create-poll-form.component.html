@@ -280,7 +280,7 @@
 
 <!--</div>-->
 <!---------------------------------------------------------------------------------------------------------------->
-<form [formGroup]="mainForm">
+<form [formGroup]="mainForm" (ngSubmit)="createPoll()">
   <div class="form-group">
     <div class="form_item_spacer">
       <label class="control-label form_label_text">
@@ -325,7 +325,7 @@
 </ng-container>
 
     <div class="form-group">
-      <input type="submit" (click)="createPoll()" value="Create Poll" class="submit-button" >
+      <input type="submit"  value="Create Poll" class="submit-button" >
     </div>
   </div>
 
