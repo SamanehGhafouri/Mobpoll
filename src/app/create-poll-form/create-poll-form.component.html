@@ -297,6 +297,8 @@
       <label class="control-label form_label_text">
         <span style="color: white">Enter</span>
         <span style="color: #FF9E13; margin-left: 5px">Option {{i + 1}}</span>
+        <span *ngIf="op.invalid && (op.touched || op.dirty)"
+              class="form-item-error">X</span>
       </label>
       <div style="display: table; width: 100%" class="form_item_spacer">
         <div class="create-poll-option-text-input-div for">
