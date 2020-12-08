@@ -20,13 +20,16 @@ export class CreatePollFormComponent implements OnInit {
         new FormControl('')
         ])
 
-    })
+    });
+  }
+
+  get options(){
+    return this.mainForm.get('options') as FormArray;
   }
 
   addOption(){
-    if (this.mainForm.value.options.length < 14) {
-
-      this.mainForm.value.options.push(new FormControl(''));
+    if (this.options.length < 15) {
+      this.options.push(new FormControl(''));
     }
   }
 

@@ -291,15 +291,15 @@
       <input type="text" formControlName="enterPollQuestion" placeholder="Your poll question"
              class="form-control form_input_field">
     </div>
-
-    <div *ngFor="let option of mainForm.value.options; index as i;">
+<ng-container formArrayName="options">
+    <div *ngFor="let op of options.controls; index as i">
       <label class="control-label form_label_text">
         <span style="color: white">Enter</span>
         <span style="color: #FF9E13; margin-left: 5px">Option {{i + 1}}</span>
       </label>
       <div style="display: table; width: 100%" class="form_item_spacer">
         <div class="create-poll-option-text-input-div for">
-          <input type="text" placeholder="Your poll option" class="form-control form_input_field">
+          <input type="text" placeholder="Your poll option" [formControlName]="i" class="form-control form_input_field">
         </div>
         <div class="create-poll-option-image-input-div">
           <label for="file-input">
@@ -317,7 +317,10 @@
         <span style="color: white; margin-left: 5px">Add</span>
         <span style="color:#FF9E13; margin-left: 5px">Option</span>
       </a>
+
     </div>
+</ng-container>
+
     <div class="form-group">
       <input type="submit" (click)="createPoll()" value="Create Poll" class="submit-button" >
     </div>
