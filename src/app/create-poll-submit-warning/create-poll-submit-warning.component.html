@@ -1,12 +1,6 @@
 
-<!--<div class="modal-header">-->
-<!--  <h4 class="modal-title">Form Error!</h4>-->
-<!--&lt;!&ndash;  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">&ndash;&gt;-->
-<!--&lt;!&ndash;    <span aria-hidden="true">&times;</span>&ndash;&gt;-->
-<!--&lt;!&ndash;  </button>&ndash;&gt;-->
 <div class="modal-content">
   <div class="modal-body">
-    <!--  <p>Hello, {{name}}!</p>-->
     <label class="modal-title">Form Error!</label>
     <div class="alert-box-message">
       <ul style="list-style-type: none">
@@ -20,7 +14,10 @@
         </li>
       </ul>
     </div>
-    <button type="button"  style="position:absolute; left: 0;" (click)="activeModal.close('Close click')" >Okay</button>
+    <div class="alert-box-button-container">
+      <input type="submit" class="alert-box-button"  (click)="activeModal.close('Close click')" value="Okay" >
+    </div>
+
   </div>
   <!--<div class="modal-footer">-->
   <!--&lt;!&ndash;  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')" >Okay</button>&ndash;&gt;-->

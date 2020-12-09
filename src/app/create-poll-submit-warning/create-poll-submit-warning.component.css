@@ -1,16 +1,22 @@
+
 .modal-content{
   display: block;
-  position: fixed;
+  position: absolute;
   height: auto;
   width: 375px;
   z-index: 450;
-  top: 35%;
+  top: 50%;
   left: 0;
   right: 0;
-  margin: 0 auto;
+  margin-top: 48%;
+  margin-left: 10%;
   background-color: #3e4b5d;
   border: 2px solid #6f7886;
   border-radius: 20px;
+
+}
+.modal.fade .modal-dialog{
+  -webkit-transform: inherit;
 }
 .modal-body{
 
@@ -51,4 +57,34 @@ label{
 li{
   display: list-item;
   text-align: -webkit-match-parent;
+}
+.alert-box-button-container{
+  margin-top: 23px;
+  margin-bottom: 23px;
+  margin-left: 20px;
+  text-align: left;
+}
+.alert-box-button{
+  bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 6px 15px;
+  font-family: days-font;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #3e4b5d;
+
+  color: #fff;
+  text-align: center;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  border: 2px solid #6f7886;
+}
+
+input{
+  line-height: inherit;
+  font-size: inherit;
+  font-family: inherit;
 }
