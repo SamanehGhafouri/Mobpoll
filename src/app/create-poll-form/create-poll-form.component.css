@@ -1,3 +1,6 @@
+.form-control.ng-touched.ng-invalid{
+  border: 2px solid red;
+}
 .form-group{
   margin-bottom: 0;
 }
@@ -20,7 +23,32 @@ label{
   font-size: 12px;
   letter-spacing: 1px;
 }
-.form_input_field{
+/*.form_input_field{*/
+/*  position: inherit;*/
+/*  height: 32px;*/
+/*  width: 100%;*/
+/*  bottom: -1px;*/
+/*  text-indent: 10px;*/
+/*  outline-color: initial;*/
+/*  outline-style: initial;*/
+/*  outline-width: 0px;*/
+/*  border: 0 solid #000;*/
+/*  border-radius: 15px;*/
+/*  margin-left: auto;*/
+/*  margin-right: auto;*/
+/*}*/
+.form-control{
+  padding: 6px 12px;
+  background-color: #fff;
+  background-image: none;
+  display: block;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+/*.form_input_field{*/
   position: inherit;
   height: 32px;
   width: 100%;
@@ -29,21 +57,10 @@ label{
   outline-color: initial;
   outline-style: initial;
   outline-width: 0px;
-  border: 0 solid #000;
+  /*border: 0 solid #000;*/
   border-radius: 15px;
   margin-left: auto;
   margin-right: auto;
-}
-.form-control{
-  padding: 6px 12px;
-  background-color: #fff;
-  background-image: none;
-  display: block;
-  font-size: 14px;
-  line-height: 1.42857143;
-  /*border: 1px solid #ccc;*/
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 
 }
 .form-control, output{
@@ -68,6 +85,7 @@ input{
   text-align: start;
   cursor: text;
   -webkit-rtl-ordering: logical;
+
 
 }
 
@@ -127,6 +145,3 @@ a{
   margin-left: 5px
 }
 
-input .form-control .form_input_field.ng-touched.ng-invalid{
-  border-color: red;
-}

@@ -290,7 +290,7 @@
               class="form-item-error">X</span>
       </label>
       <input type="text" formControlName="enterPollQuestion" placeholder="Your poll question"
-             class="form-control form_input_field" required>
+             class="form-control" required>
     </div>
 <ng-container formArrayName="options">
     <div *ngFor="let op of options.controls; index as i">
@@ -301,8 +301,8 @@
               class="form-item-error">X</span>
       </label>
       <div style="display: table; width: 100%" class="form_item_spacer">
-        <div class="create-poll-option-text-input-div for">
-          <input type="text" placeholder="Your poll option" [formControlName]="i" class="form-control form_input_field">
+        <div class="create-poll-option-text-input-div">
+          <input type="text" placeholder="Your poll option" [formControlName]="i" class="form-control">
         </div>
         <div class="create-poll-option-image-input-div">
           <label for="file-input">
@@ -325,7 +325,7 @@
 </ng-container>
 
     <div class="form-group">
-      <input type="submit"  value="Create Poll" class="submit-button" >
+      <input type="submit"  value="Create Poll" class="submit-button">
     </div>
   </div>
 
