@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./success-poll-page.component.css']
 })
 export class SuccessPollPageComponent implements OnInit {
-
+  successPollPage = 'success!';
   constructor() { }
 
   ngOnInit(): void {
