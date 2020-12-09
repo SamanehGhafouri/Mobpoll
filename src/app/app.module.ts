@@ -12,6 +12,7 @@ import { ContatinerComponent } from './contatiner/contatiner.component';
 import { CreatePollFormComponent } from './create-poll-form/create-poll-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { CreatePollSubmitWarningComponent } from './create-poll-submit-warning/create-poll-submit-warning.component';
+import { SuccessPollPageComponent } from './success-poll-page/success-poll-page.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CreatePollSubmitWarningComponent } from './create-poll-submit-warning/c
     ContatinerComponent,
     CreatePollFormComponent,
     CreatePollSubmitWarningComponent,
+    SuccessPollPageComponent,
 
 
 
