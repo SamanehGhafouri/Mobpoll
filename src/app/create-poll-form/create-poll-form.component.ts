@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {CreatePollSubmitWarningComponent} from "../create-poll-submit-warning/create-poll-submit-warning.component";
+import {Router} from "@angular/router";
 
 // Custom validation for poll question that needs to be at least 2 words
 function validateSize(form: FormControl) {
@@ -26,7 +27,7 @@ function validateSize(form: FormControl) {
 export class CreatePollFormComponent implements OnInit {
   mainForm: FormGroup;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, public router: Router) {}
 
   ngOnInit(): void {
     this.mainForm = new FormGroup({
@@ -59,7 +60,8 @@ export class CreatePollFormComponent implements OnInit {
   createPoll(){
     // TODO: direct the valid form to the created form page and show details
     if (this.mainForm.valid){
-      alert("form is created");
+      // alert("form is created");
+      this.router.navigate(['/success']);
     }
     else {
       const modalRef = this.modalService.open(CreatePollSubmitWarningComponent);
