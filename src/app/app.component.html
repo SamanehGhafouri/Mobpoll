@@ -1,7 +1,12 @@
 <ul class="nav justify-content-center">
   <li class="nav-item"><a routerLink="/" routerLinkActive="activebutton">CREATE POLL</a></li>
   <div class="active">:</div>
-  <li class="nav-item"><a routerLink="/help" routerLinkActive="activebutton">HELP</a></li>
+  <li class="nav-item"><a routerLink="/help" routerLinkActive="activebutton" (click)="helpCom()">HELP</a></li>
+
+<!--  <div class="active">:</div>-->
+<!--  <li class="nav-item"><a routerLink="/help" routerLinkActive="activebutton">HELP</a></li>-->
+
+
   <div class="active">:</div>
   <li class="nav-item"><a routerLink="/about" routerLinkActive="activebutton">ABOUT</a></li>
   <div class="active">:</div>
@@ -15,5 +20,6 @@
     <router-outlet></router-outlet>
   </div>
 </div>
+
 
 

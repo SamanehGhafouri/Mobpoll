@@ -5,6 +5,7 @@ import {AboutComponent} from "./about/about.component";
 import {MoreComponent} from "./more/more.component";
 import {PublicPollsComponent} from "./public-polls/public-polls.component";
 import {SuccessPollPageComponent} from "./success-poll-page/success-poll-page.component";
+import {HelpComponent} from "./help/help.component";
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'learn_more', component: MoreComponent},
   {path: 'public_polls', component: PublicPollsComponent},
-  {path: 'success', component: SuccessPollPageComponent}
+  {path: 'success', component: SuccessPollPageComponent},
+  // {path: 'help', component:HelpComponent}
 ];
 
 @NgModule({

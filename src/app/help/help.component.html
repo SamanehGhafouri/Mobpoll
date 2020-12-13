@@ -1,1 +1,21 @@
-<p>help works!</p>
+<div class="modal-content">
+  <div class="modal-body">
+    <label class="modal-title">Help: {{helpName}}</label>
+    <ng-content></ng-content>
+<!--    <div class="alert-box-message">-->
+<!--      <ul style="list-style-type: none">-->
+<!--        <li style="list-style-type: none">-->
+<!--          <span style="color: #FF9E13">Poll Question:</span>-->
+<!--          <span style="color: #ffffff">Question must have at least two words.</span>-->
+<!--        </li>-->
+<!--        <li style="list-style-type: none">-->
+<!--          <span style="color: #FF9E13">Poll Options:</span>-->
+<!--          <span style="color: #ffffff">A minimum of 2 poll options are required.</span>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+    <div class="alert-box-button-container">
+      <input type="submit" class="alert-box-button"  (click)="activeModal.close('Close click')" value="CLOSE">
+    </div>
+  </div>
+</div>
