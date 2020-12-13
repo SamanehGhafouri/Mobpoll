@@ -5,14 +5,88 @@
   font-family: Verdana;
   font-size: 12px;
   color: #ffffff;
+
 }
-.bi{
+label{
+  max-width: 100%;
+  margin-bottom: 5px;
+}
+.success-poll-digest-header-label{
+  display: block;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #fff;
+
+  margin-top: 21px;
+  font-family: days-font;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.bi .bi-chevron-down{
   position: relative;
-  top: 1px;
+  /*top: 1px;*/
   display: inline-block;
-  font-family: Glyphicons Halflings;
+  font-family: bootstrap-icons;
   font-style: normal;
   font-weight: 400;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
+}
+
+
+.success-poll-question-anchor{
+  color: #ff9e13;
+  display: block;
+  text-decoration: none;
+  margin-top: 18px;
+  margin-left: 25px;
+  font-family: days-font;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  word-break: normal;
+}
+.success-poll-question-anchor:hover{
+  display: block;
+  text-decoration: none;
+  margin-top: 18px;
+  margin-left: 25px;
+  font-family: days-font;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #3fa9f5;
+  word-break: normal;
+
+}
+.success-poll-url-label{
+  word-break: break-all;
+  display: block;
+  margin-top: 18px;
+  margin-left: 25px;
+  font-family: days-font;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #ff9e13;
+}
+
+.copy_to_clipboard_button{
+  color: #fff;
+  bottom: 0;
+  margin-top: 10px;
+  margin-left: 25px;
+  padding: 6px 15px;
+  font-family: days-font;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #3e4b5d;
+  border-radius: 25px;
+  border: 2px solid #707785;
+}
+button{
+  line-height: inherit;
+  cursor: pointer;
+  overflow: visible;
 }
