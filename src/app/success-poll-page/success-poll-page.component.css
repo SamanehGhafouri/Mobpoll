@@ -31,6 +31,7 @@ label{
   font-weight: 400;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
+  /*content: "\e114";*/
 }
 
 
@@ -89,4 +90,7 @@ button{
   line-height: inherit;
   cursor: pointer;
   overflow: visible;
+}
+span.bi{
+  font-weight: bold;
 }
