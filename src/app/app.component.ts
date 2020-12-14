@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {CreatePollHelpComponent} from "./create-poll-help/create-poll-help.component";
 import {AboutHelpComponent} from "./about-help/about-help.component";
 import {LearnMoreHelpComponent} from "./learn-more-help/learn-more-help.component";
+import {PublicPollsHelpComponent} from "./public-polls-help/public-polls-help.component";
 
 
 
@@ -28,6 +29,9 @@ export class AppComponent {
     }
     else if (this.router.url == '/learn_more') {
       const modalRefLearnMore = this.modalService.open(LearnMoreHelpComponent);
+    }
+    else if (this.router.url == '/public_polls'){
+      const modalRefLearnMore = this.modalService.open(PublicPollsHelpComponent);
     }
   }
 }

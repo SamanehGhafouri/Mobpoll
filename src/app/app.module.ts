@@ -16,6 +16,7 @@ import { SuccessPollPageComponent } from './success-poll-page/success-poll-page.
 import { CreatePollHelpComponent } from './create-poll-help/create-poll-help.component';
 import { AboutHelpComponent } from './about-help/about-help.component';
 import { LearnMoreHelpComponent } from './learn-more-help/learn-more-help.component';
+import { PublicPollsHelpComponent } from './public-polls-help/public-polls-help.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { LearnMoreHelpComponent } from './learn-more-help/learn-more-help.compon
     CreatePollHelpComponent,
     AboutHelpComponent,
     LearnMoreHelpComponent,
+    PublicPollsHelpComponent,
 
 
 
