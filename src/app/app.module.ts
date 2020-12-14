@@ -15,6 +15,7 @@ import { CreatePollSubmitWarningComponent } from './create-poll-submit-warning/c
 import { SuccessPollPageComponent } from './success-poll-page/success-poll-page.component';
 import { CreatePollHelpComponent } from './create-poll-help/create-poll-help.component';
 import { AboutHelpComponent } from './about-help/about-help.component';
+import { LearnMoreHelpComponent } from './learn-more-help/learn-more-help.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AboutHelpComponent } from './about-help/about-help.component';
     SuccessPollPageComponent,
     CreatePollHelpComponent,
     AboutHelpComponent,
+    LearnMoreHelpComponent,
 
 
 
