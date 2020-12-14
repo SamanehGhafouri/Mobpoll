@@ -14,6 +14,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { CreatePollSubmitWarningComponent } from './create-poll-submit-warning/create-poll-submit-warning.component';
 import { SuccessPollPageComponent } from './success-poll-page/success-poll-page.component';
 import { CreatePollHelpComponent } from './create-poll-help/create-poll-help.component';
+import { AboutHelpComponent } from './about-help/about-help.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CreatePollHelpComponent } from './create-poll-help/create-poll-help.com
     CreatePollSubmitWarningComponent,
     SuccessPollPageComponent,
     CreatePollHelpComponent,
+    AboutHelpComponent,
 
 
 
