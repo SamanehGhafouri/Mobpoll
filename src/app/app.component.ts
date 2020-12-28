@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {Router} from "@angular/router";
 import {CreatePollHelpComponent} from "./create-poll-help/create-poll-help.component";
@@ -10,28 +10,38 @@ import {PublicPollsHelpComponent} from "./public-polls-help/public-polls-help.co
 
 @Component({
   selector: 'app-root',
+  // encapsulation: ViewEncapsulation.Emulated,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  // styles:[`
+  //   .mobpoll-help-modal .modal-content{
+  //     border-color: red;
+  //     border-radius: 20px;
+  //   }
+  //   .mobpoll-helpss-modal .modal-content{
+  //     border-color: #FF9E13;
+  //   }
+  // `]
 })
 export class AppComponent {
   title = 'Mobpoll-in-Angular';
 
 
-  constructor(private modalService: NgbModal, public router: Router) {
-  }
+  // constructor(private modalService: NgbModal, public router: Router) {
+  // }
 
-  helpCom() {
-    if (this.router.url == '/') {
-      const modalRef = this.modalService.open(CreatePollHelpComponent);
-
-    } else if (this.router.url == '/about') {
-      const modalRefAbout = this.modalService.open(AboutHelpComponent);
-    }
-    else if (this.router.url == '/learn_more') {
-      const modalRefLearnMore = this.modalService.open(LearnMoreHelpComponent);
-    }
-    else if (this.router.url == '/public_polls'){
-      const modalRefLearnMore = this.modalService.open(PublicPollsHelpComponent);
-    }
-  }
+  // helpCom() {
+  //   if (this.router.url == '/') {
+  //     const modalRef = this.modalService.open(CreatePollHelpComponent, {scrollable: true, windowClass:'mobpoll-help-modal'});
+  //
+  //   } else if (this.router.url == '/about') {
+  //     const modalRefAbout = this.modalService.open(AboutHelpComponent, {scrollable: true, windowClass:'mobpoll-helpss-modal'});
+  //   }
+  //   else if (this.router.url == '/learn_more') {
+  //     const modalRefLearnMore = this.modalService.open(LearnMoreHelpComponent, {scrollable: true});
+  //   }
+  //   else if (this.router.url == '/public_polls'){
+  //     const modalRefLearnMore = this.modalService.open(PublicPollsHelpComponent, {scrollable: true});
+  //   }
+  // }
 }
