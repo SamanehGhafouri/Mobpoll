@@ -1,27 +1,4 @@
-
-.modal-content{
-  display: block;
-  position: absolute;
-  height: auto;
-  width: 375px;
-  z-index: 450;
-  top: 50%;
-  left: 0;
-  right: 0;
-  /*margin-top: 48%;*/
-  /*margin-left: 10%;*/
-  background-color: #3e4b5d;
-  border: 2px solid #6f7886;
-  border-radius: 20px;
-
-}
-.modal.fade .modal-dialog{
-  -webkit-transform: inherit;
-}
-.modal-body{
-
-}
-.modal-title{
+.title{
   width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -74,13 +51,9 @@ li{
   text-transform: uppercase;
   letter-spacing: 1px;
   background-color: #3e4b5d;
-
   color: #fff;
   text-align: center;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
   border-radius: 25px;
-  border: 2px solid #6f7886;
 }
 
 input{
@@ -88,3 +61,5 @@ input{
   font-size: inherit;
   font-family: inherit;
 }
+
+

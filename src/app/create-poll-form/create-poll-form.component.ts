@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {CreatePollSubmitWarningComponent} from "../create-poll-submit-warning/create-poll-submit-warning.component";
@@ -21,8 +21,22 @@ function validateSize(form: FormControl) {
 
 @Component({
   selector: 'app-create-poll-form',
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './create-poll-form.component.html',
-  styleUrls: ['./create-poll-form.component.css']
+  styleUrls: ['./create-poll-form.component.css'],
+  styles: [`
+    .mobpoll-modal .modal-content {
+      border-radius: 20px;
+      letter-spacing: 1px;
+      height: auto;
+      width: 375px;
+      z-index: 450;
+      background-color: #3e4b5d;
+      border: 2px solid #6f7886;
+
+    }
+
+  `]
 })
 export class CreatePollFormComponent implements OnInit {
   mainForm: FormGroup;
@@ -64,8 +78,8 @@ export class CreatePollFormComponent implements OnInit {
       this.router.navigate(['/success']);
     }
     else {
-      const modalRef = this.modalService.open(CreatePollSubmitWarningComponent);
-      modalRef.componentInstance.name = 'World';
+      this.modalService.open(CreatePollSubmitWarningComponent, {centered: true, scrollable: true, windowClass: 'mobpoll-modal'});
+      // modalRef.componentInstance.name = 'World';
 
       this.validateFormGroupField(this.mainForm);
       this.validateFormArrayFields(this.options);
