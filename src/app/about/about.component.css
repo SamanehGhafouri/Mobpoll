@@ -1,3 +1,30 @@
 .generic_title_color{
   color: #3fa9f5;
 }
+.about-question{
+  font-family: Verdana;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: #3fa9f5;
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.about-answer{
+  font-family: Verdana;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.about-message-link{
+  text-decoration: none;
+  color: #ff9e13;
+}
+a:hover{
+  color: #337ab7;
+}
+
