@@ -19,6 +19,7 @@ import { LearnMoreHelpComponent } from './learn-more-help/learn-more-help.compon
 import { PublicPollsHelpComponent } from './public-polls-help/public-polls-help.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HelpButtonComponent } from './help-button/help-button.component';
+import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { HelpButtonComponent } from './help-button/help-button.component';
     PublicPollsHelpComponent,
     NavBarComponent,
     HelpButtonComponent,
+    TermsOfServiceComponent,
 
 
 
