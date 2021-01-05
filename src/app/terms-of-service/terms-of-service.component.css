@@ -15,3 +15,20 @@ p {
   font-size: 14px;
   line-height: 1.42857143;
 }
+.header-h3{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  font-size: 24px;
+  color: #fff;
+
+}
+h3{
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
