@@ -4,6 +4,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {CreatePollSubmitWarningComponent} from "../create-poll-submit-warning/create-poll-submit-warning.component";
 import {Router} from "@angular/router";
 import {AngularFirestore} from "@angular/fire/firestore";
+import {ServiceService} from "../service.service";
 
 // Custom validation for poll question that needs to be at least 2 words
 function validateSize(form: FormControl) {
@@ -42,7 +43,7 @@ function validateSize(form: FormControl) {
 export class CreatePollFormComponent implements OnInit {
   mainForm: FormGroup;
 
-  constructor(private modalService: NgbModal, public router: Router, private firestore: AngularFirestore) {}
+  constructor(private modalService: NgbModal, public router: Router, private firestore: AngularFirestore, private service:ServiceService) {}
 
   ngOnInit(): void {
     this.mainForm = new FormGroup({
@@ -76,7 +77,8 @@ export class CreatePollFormComponent implements OnInit {
     // TODO: direct the valid form to the created form page and show details
     if (this.mainForm.valid){
       // alert("form is created");
-      this.firestore.collection("poll").add(this.mainForm.value);
+      this.service.add(this.mainForm.value);
+      // this.firestore.collection("poll").add(this.mainForm.value);
       this.router.navigate(['/success']);
     }
     else {

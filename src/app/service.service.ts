@@ -10,5 +10,8 @@ export class ServiceService {
 
   constructor(private firebase: AngularFirestore) { }
 
+  add(item){
+    this.firebase.collection("poll").add(item);
+  }
 
 }
