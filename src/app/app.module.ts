@@ -20,6 +20,10 @@ import { PublicPollsHelpComponent } from './public-polls-help/public-polls-help.
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HelpButtonComponent } from './help-button/help-button.component';
 import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.component';
+import {environment} from "../environments/environment";
+import {AngularFireModule} from "@angular/fire";
+import {AngularFirestoreModule} from "@angular/fire/firestore";
+
 
 @NgModule({
   declarations: [
@@ -48,6 +52,9 @@ import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.com
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
+
 
   ],
   providers: [],

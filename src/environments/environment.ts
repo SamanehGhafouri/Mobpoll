@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyAgjj0wPEdg-rpF88jC_yQgwFRNumaCmy4",
+    authDomain: "mobpoll-quickpoll.firebaseapp.com",
+    projectId: "mobpoll-quickpoll",
+    storageBucket: "mobpoll-quickpoll.appspot.com",
+    messagingSenderId: "35042872260",
+    appId: "1:35042872260:web:2f46c5c83d3677fbe2b291",
+    measurementId: "G-3MNREZ3S4S"
+  }
 };
 
 /*

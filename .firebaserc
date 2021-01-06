@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mobpoll-quickpoll": {
+      "hosting": {
+        "Mobpoll-in-Angular": [
+          "mobpoll-quickpoll"
+        ]
+      }
+    }
+  }
+}
