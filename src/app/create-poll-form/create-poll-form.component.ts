@@ -86,7 +86,7 @@ export class CreatePollFormComponent implements OnInit {
       // this.firestore.collection("poll").add(this.mainForm.value);
       // this.router.navigate(['/success']);
 
-      this.service.add(this.mainForm.value, poll => {
+      this.service.addPollToFirebase(this.mainForm.value, poll => {
         console.log("Inside the Create Poll Component. Poll ID=", poll.id);
         this.router.navigate(['/success']);
       });

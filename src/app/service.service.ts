@@ -13,7 +13,7 @@ export class ServiceService {
   constructor(private firebase: AngularFirestore,) {
   }
 
-  add(item, callback: (poll) => void ){
+  addPollToFirebase(item, callback: (poll) => void ){
     this.firebase.collection("polls").add(item).then(pollDocument => {
       callback(pollDocument)
     })
