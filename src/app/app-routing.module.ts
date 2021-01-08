@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'learn_more', component: MoreComponent},
   {path: 'public_polls', component: PublicPollsComponent},
-  {path: 'success', component: SuccessPollPageComponent},
+  {path: 'success/:pollId', component: SuccessPollPageComponent},
   {path: 'terms_of_service', component:TermsOfServiceComponent}
   // {path: 'help', component:HelpComponent}
 ];

@@ -88,7 +88,7 @@ export class CreatePollFormComponent implements OnInit {
 
       this.service.addPollToFirebase(this.mainForm.value, poll => {
         console.log("Inside the Create Poll Component. Poll ID=", poll.id);
-        this.router.navigate(['/success']);
+        this.router.navigate(['/success/' + poll.id]);
       });
 
     }
