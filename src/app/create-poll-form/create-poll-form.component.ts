@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {CreatePollSubmitWarningComponent} from "../create-poll-submit-warning/create-poll-submit-warning.component";
@@ -43,13 +43,10 @@ function validateSize(form: FormControl) {
 })
 export class CreatePollFormComponent implements OnInit {
   mainForm: FormGroup;
-  pollid : any;
 
-
-  constructor(private modalService: NgbModal, public router: Router, private firestore: AngularFirestore, private service:ServiceService)
-  {
-
-  }
+  constructor(private modalService: NgbModal, public router: Router,
+              private firestore: AngularFirestore, private service:ServiceService)
+  {}
 
   ngOnInit(): void {
     this.mainForm = new FormGroup({
