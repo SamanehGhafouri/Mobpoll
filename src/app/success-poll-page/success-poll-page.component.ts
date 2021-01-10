@@ -13,8 +13,8 @@ export class SuccessPollPageComponent implements OnInit {
   pollId: string;
   successPollPage = 'success!';
   constructor(private route: ActivatedRoute) {
-    route.params.subscribe(whatChanged => {
-      this.pollId = whatChanged['pollId'];
+    route.params.subscribe(pollId => {
+      this.pollId = pollId['pollId'];
     });
   }
 
