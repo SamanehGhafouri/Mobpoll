@@ -17,15 +17,12 @@ export class ServiceService {
 
   }
 
-  addPollToFirebase(item, callback: (poll) => void ){
-    this.firebase.collection("polls").add(item).then(pollDocument => {
+  addPollToFirebase(poll, callback: (poll) => void ){
+    this.firebase.collection("polls").add(poll).then(pollDocument => {
       callback(pollDocument)
     })
   }
 
-  getQuestion(){
-    // this.firebase.collection("polls").get().then()
-  }
 
 
 
