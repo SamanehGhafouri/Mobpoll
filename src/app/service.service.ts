@@ -17,7 +17,7 @@ export class ServiceService {
 
   }
 
-  addPollToFirebase(poll, callback: (poll) => void ){
+  addPoll(poll, callback: (poll) => void ){
     this.firebase.collection("polls").add(poll).then(pollDocument => {
       callback(pollDocument)
     })
