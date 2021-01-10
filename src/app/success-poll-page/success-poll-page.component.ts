@@ -12,28 +12,22 @@ export class SuccessPollPageComponent implements OnInit {
   pollId: string;
   pollQuestion: string;
   successPollPage = 'success!';
-  constructor(private route: ActivatedRoute, private service:ServiceService, private firestore:AngularFirestore) {
+  constructor(private route: ActivatedRoute, private service:ServiceService) {
 
+    // Getting pollId from the URL
     route.params.subscribe(pollId => {
-
       this.pollId = pollId['pollId'];
 
-      // this.firestore.collection('polls').doc(this.pollId).get().subscribe(document => {
-      //   const poll = document.data()
-      //   console.log("#### SUBSCRIBED RESULTS ####", poll['enterPollQuestion'], poll['options']);
-      //
-      //   this.pollQuestion = poll['enterPollQuestion'];
-      // });
-
+      // Getting poll using Id
       this.service.getPollById(this.pollId).subscribe(document => {
         const poll = document.data();
-        this.pollQuestion = poll['enterPollQuestion'];
+        // retrieve poll question from this
+        this.pollQuestion = poll['pollQuestion'];
       })
 
     });
 
   }
-
   ngOnInit() {
 
   }

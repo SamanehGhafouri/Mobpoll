@@ -13,7 +13,7 @@ import {redirectUnauthorizedTo} from "@angular/fire/auth-guard";
 export class ServiceService {
 
 
-  constructor(private firebase: AngularFirestore, ) {
+  constructor(private firebase: AngularFirestore) {
 
   }
 

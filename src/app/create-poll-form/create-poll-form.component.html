@@ -7,7 +7,7 @@
         <span *ngIf="question.invalid && (question.touched || question.dirty)"
               class="form-item-error">X</span>
       </label>
-      <input type="text" formControlName="enterPollQuestion" placeholder="Your poll question"
+      <input type="text" formControlName="pollQuestion" placeholder="Your poll question"
              class="form-control" required>
     </div>
     <ng-container formArrayName="options">

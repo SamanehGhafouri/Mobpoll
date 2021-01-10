@@ -50,7 +50,7 @@ export class CreatePollFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.mainForm = new FormGroup({
-      enterPollQuestion : new FormControl('', [validateSize]),
+      pollQuestion : new FormControl('', [validateSize]),
       options: new FormArray([
         new FormControl('', [Validators.required]),
         new FormControl('', [Validators.required]),
@@ -67,7 +67,7 @@ export class CreatePollFormComponent implements OnInit {
   }
 
   get question(){
-    return this.mainForm.get('enterPollQuestion');
+    return this.mainForm.get('pollQuestion');
   }
 
   addOption(){
