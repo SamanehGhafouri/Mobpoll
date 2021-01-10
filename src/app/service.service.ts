@@ -23,6 +23,10 @@ export class ServiceService {
     })
   }
 
+  getPollById(pollId){
+    return this.firebase.collection("polls").doc(pollId).get();
+  }
+
 
 
 

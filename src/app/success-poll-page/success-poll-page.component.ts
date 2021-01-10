@@ -18,12 +18,17 @@ export class SuccessPollPageComponent implements OnInit {
 
       this.pollId = pollId['pollId'];
 
-      this.firestore.collection('polls').doc(this.pollId).get().subscribe(document => {
-        const poll = document.data()
-        console.log("#### SUBSCRIBED RESULTS ####", poll['enterPollQuestion'], poll['options']);
+      // this.firestore.collection('polls').doc(this.pollId).get().subscribe(document => {
+      //   const poll = document.data()
+      //   console.log("#### SUBSCRIBED RESULTS ####", poll['enterPollQuestion'], poll['options']);
+      //
+      //   this.pollQuestion = poll['enterPollQuestion'];
+      // });
 
+      this.service.getPollById(this.pollId).subscribe(document => {
+        const poll = document.data();
         this.pollQuestion = poll['enterPollQuestion'];
-      });
+      })
 
     });
 
