@@ -18,6 +18,7 @@ export class ServiceService {
   }
 
   addPoll(poll, callback: (poll) => void ){
+    poll["pollIsPrivate"] = 1
     this.firebase.collection("polls").add(poll).then(pollDocument => {
       callback(pollDocument)
     })
