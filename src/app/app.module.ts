@@ -23,6 +23,7 @@ import { TermsOfServiceComponent } from './terms-of-service/terms-of-service.com
 import {environment} from "../environments/environment";
 import {AngularFireModule} from "@angular/fire";
 import {AngularFirestoreModule} from "@angular/fire/firestore";
+import {ClipboardModule} from "@angular/cdk/clipboard";
 
 
 @NgModule({
@@ -53,7 +54,9 @@ import {AngularFirestoreModule} from "@angular/fire/firestore";
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ClipboardModule
+
 
 
   ],

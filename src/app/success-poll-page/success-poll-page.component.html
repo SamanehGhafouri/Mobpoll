@@ -26,7 +26,7 @@
   <label class="success-poll-url-label">
     {{yourPoll}}
   </label>
-  <button type="button" class="copy_to_clipboard_button">
+  <button type="button" cdkCopyToClipboard="{{yourPoll}}" class="copy_to_clipboard_button">
     Copy
     <span>
       <i class="bi bi-clipboard-check"></i>
@@ -55,7 +55,7 @@
   <label class="success-poll-url-label">
     {{iFrame}}
   </label>
-  <button class="copy_to_clipboard_button">
+  <button cdkCopyToClipboard="{{iFrame}}" class="copy_to_clipboard_button">
     Copy
     <span>
       <i class="bi bi-clipboard-check"></i>
