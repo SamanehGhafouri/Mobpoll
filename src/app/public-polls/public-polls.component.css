@@ -1,3 +1,21 @@
 .generic_title_color {
   color: #bdccd4;
 }
+.public-poll-question-anchor:link, .public-poll-question-anchor:visited{
+  text-decoration: none;
+  font-family: days-font;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #73ca0d;
+  word-break: normal;
+}
+.public-poll-question-analytics-label{
+  text-decoration: none;
+  font-family: days-font;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #fff;
+  word-break: normal;
+}
