@@ -1,8 +1,10 @@
 <app-contatiner class="generic_title_color" [message]="publicPollsMessage">
-  <div *ngFor="let q of questionArray$ | async">
+  <div *ngFor="let q of questionArray$ | async" style="margin: 20px 0">
   <div *ngIf="q.pollIsPrivate == 0" class="public-poll-cell" style="margin: auto; display: flex">
     <div class="public-poll-cell-image" style="width: 65px; float: left; margin: auto;">
-      <img src="./assets/speech_bubble.png" class="media-object">
+      <div class="take-poll-option">
+        <div class="poll-option-image"></div>
+    </div>
     </div>
     <div class="public-polls-cell-text" style="width: 100%; float: left; margin: auto;">
       <a href="" class="public-poll-question-anchor">{{q.pollQuestion}}</a>
@@ -10,5 +12,4 @@
     </div>
   </div>
   </div>
-
 </app-contatiner>

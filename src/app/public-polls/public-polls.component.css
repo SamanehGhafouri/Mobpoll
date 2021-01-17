@@ -19,3 +19,18 @@
   color: #fff;
   word-break: normal;
 }
+.take-poll-option{
+  display: table-cell;
+  vertical-align: middle;
+  padding-right: 15px;
+}
+.poll-option-image{
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 50px;
+  width: 50px;
+  background-image: url('../../assets/speech_bubble.png');
+}
