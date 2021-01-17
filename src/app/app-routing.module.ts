@@ -5,8 +5,8 @@ import {AboutComponent} from "./about/about.component";
 import {MoreComponent} from "./more/more.component";
 import {PublicPollsComponent} from "./public-polls/public-polls.component";
 import {SuccessPollPageComponent} from "./success-poll-page/success-poll-page.component";
-import {HelpComponent} from "./help/help.component";
 import {TermsOfServiceComponent} from "./terms-of-service/terms-of-service.component";
+import {TakeAPollComponent} from "./take-a-poll/take-a-poll.component";
 
 
 const routes: Routes = [
@@ -15,8 +15,8 @@ const routes: Routes = [
   {path: 'learn_more', component: MoreComponent},
   {path: 'public_polls', component: PublicPollsComponent},
   {path: 'success/:pollId', component: SuccessPollPageComponent},
-  {path: 'terms_of_service', component:TermsOfServiceComponent}
-  // {path: 'help', component:HelpComponent}
+  {path: 'terms_of_service', component:TermsOfServiceComponent},
+  {path: 'poll/:pollId', component: TakeAPollComponent}
 ];
 
 @NgModule({

@@ -24,6 +24,7 @@ import {environment} from "../environments/environment";
 import {AngularFireModule} from "@angular/fire";
 import {AngularFirestoreModule} from "@angular/fire/firestore";
 import {ClipboardModule} from "@angular/cdk/clipboard";
+import { TakeAPollComponent } from './take-a-poll/take-a-poll.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import {ClipboardModule} from "@angular/cdk/clipboard";
     NavBarComponent,
     HelpButtonComponent,
     TermsOfServiceComponent,
+    TakeAPollComponent,
 
 
 
