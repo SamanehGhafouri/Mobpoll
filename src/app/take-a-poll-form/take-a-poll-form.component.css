@@ -1,0 +1,43 @@
+.generic_submit_button{
+  bottom: 0;
+  margin-top: 10px;
+  padding: 6px 15px;
+  color: #fff;
+  font-family: days-font;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  border: 2px solid #707785;
+  background-color: #3e4b5d;
+}
+.take-poll-question{
+  overflow: hidden;
+  margin-left: 0;
+  font-family: Verdana;
+  font-size: 15px;
+  font-weight: 700;
+  color: #73ca0d;
+  text-decoration: none;
+  word-break: normal;
+}
+.take-poll-option-check-box{
+  display: table-cell;
+  vertical-align: middle;
+  padding-right: 15px;
+}
+.take-poll-option-text{
+  display: table-cell;
+  vertical-align: middle;
+}
+.take-poll-option-text-label{
+  font-family: Verdana;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 1px;
+  padding-top: 3px;
+  word-break: break-all;
+}
