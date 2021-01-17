@@ -1,12 +1,5 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from "@angular/fire/firestore";
-import firebase from "firebase";
-import Item = firebase.analytics.Item;
-import {animate} from "@angular/animations";
-import {Poll} from "./poll/poll";
-import {CreatePollFormComponent} from "./create-poll-form/create-poll-form.component";
-import {redirectUnauthorizedTo} from "@angular/fire/auth-guard";
-import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -29,11 +22,8 @@ export class ServiceService {
     return this.firebase.collection("polls").doc(pollId).get();
   }
 
-  getQuestions(){
-
-  }
   getPolls(){
-    return this.firebase.collection("polls").valueChanges()
+    return this.firebase.collection("polls").valueChanges();
   }
 
 
