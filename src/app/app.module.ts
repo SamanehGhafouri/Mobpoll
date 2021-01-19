@@ -26,6 +26,7 @@ import {AngularFirestoreModule} from "@angular/fire/firestore";
 import {ClipboardModule} from "@angular/cdk/clipboard";
 import { TakeAPollComponent } from './take-a-poll/take-a-poll.component';
 import { TakeAPollFormComponent } from './take-a-poll-form/take-a-poll-form.component';
+import { PollResultsComponent } from './poll-results/poll-results.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { TakeAPollFormComponent } from './take-a-poll-form/take-a-poll-form.comp
     TermsOfServiceComponent,
     TakeAPollComponent,
     TakeAPollFormComponent,
+    PollResultsComponent,
 
 
 

@@ -1,5 +1,6 @@
-<app-contatiner  class="generic_title_color" [message]="takeAPollMessage">
-  <app-take-a-poll-form></app-take-a-poll-form>
+<app-contatiner class="generic_title_color" [message]="takeAPollMessage">
+  <app-take-a-poll-form *ngIf="taken === false"></app-take-a-poll-form>
+  <app-poll-results *ngIf="taken === true"></app-poll-results>
 
 </app-contatiner>
 
