@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import {AngularFirestore} from "@angular/fire/firestore";
+import {map} from "rxjs/operators";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
-
-
   constructor(private firebase: AngularFirestore) {
 
   }
@@ -23,9 +23,18 @@ export class ServiceService {
   }
 
   getPolls(){
-    return this.firebase.collection("polls").valueChanges();
+
+    // For simple stuff use valueChanges() like you need just data in subcollection
+    // return this.firebase.collection("polls").valueChanges();
+
+    // For more complex: like need data and also the id that generated use snapshotChanges
+    // source: https://github.com/angular/angularfire/blob/master/docs/firestore/collections.md#snapshotchanges
+    return this.firebase.collection('polls').snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data();
+        data['id'] = a.payload.doc.id;
+        return data;
+      }))
+    )
   }
-
-
-
 }

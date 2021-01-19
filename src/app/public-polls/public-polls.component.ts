@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ServiceService} from "../service.service";
 import {Observable} from "rxjs";
+import {pathToFileURL} from "url";
 
 
 @Component({
@@ -11,10 +12,13 @@ import {Observable} from "rxjs";
 export class PublicPollsComponent implements OnInit {
   publicPollsMessage = "Participate in a public poll";
   questionArray$: Observable<any[]>;
+  pollId: any;
+  poll : any
+
 
   constructor(private service: ServiceService) {
 
-    this.questionArray$ = service.getPolls();
+    this.questionArray$ = this.service.getPolls();
 
     // Using Observable with callback
     // const public_poll_component = this; // Capture memory reference to this component
@@ -29,6 +33,7 @@ export class PublicPollsComponent implements OnInit {
   }
 
   ngOnInit(){
+
 
   }
 
