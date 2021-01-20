@@ -3,24 +3,7 @@ import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {CreatePollSubmitWarningComponent} from "../create-poll-submit-warning/create-poll-submit-warning.component";
 import {Router} from "@angular/router";
-import {AngularFirestore} from "@angular/fire/firestore";
 import {ServiceService} from "../service.service";
-import {Poll} from "../poll/poll";
-
-// Custom validation for poll question that needs to be at least 2 words
-function validateSize(form: FormControl) {
-  let poll_option_input = form.value;
-  poll_option_input = poll_option_input.trim(); // removes spaces from left and right of string
-  poll_option_input = poll_option_input.replace(/\s\s+/g, ' '); // removes extra spaces in between words
-  let option_input_words = poll_option_input.split(" "); // creates an array of words from string
-
-  console.log("Option Input Words", option_input_words)
-  console.log("Validate Size Input Value", form.value, option_input_words.length)
-
-  return option_input_words.length < 2 ? {
-    invalidSize: true
-  } : null;
-}
 
 @Component({
   selector: 'app-create-poll-form',
@@ -44,19 +27,18 @@ function validateSize(form: FormControl) {
 export class CreatePollFormComponent implements OnInit {
   mainForm: FormGroup;
 
-  constructor(private modalService: NgbModal, public router: Router,
-              private firestore: AngularFirestore, private service:ServiceService)
+  constructor(private modalService: NgbModal, public router: Router, private service:ServiceService)
   {}
 
   ngOnInit(): void {
     this.mainForm = new FormGroup({
-      pollQuestion : new FormControl('', [validateSize]),
+      pollQuestion : new FormControl('', [this.service.ValidateSize]),
       options: new FormArray([
         new FormControl('', [Validators.required]),
         new FormControl('', [Validators.required]),
-        new FormControl(''),
-        new FormControl(''),
-        new FormControl('')
+        new FormControl('', ),
+        new FormControl('', ),
+        new FormControl('', )
       ])
 
     });
@@ -78,6 +60,7 @@ export class CreatePollFormComponent implements OnInit {
 
   createPoll(){
     if (this.mainForm.valid){
+
 
       // this.service.add(this.mainForm.value);
       // this.firestore.collection("poll").add(this.mainForm.value);
