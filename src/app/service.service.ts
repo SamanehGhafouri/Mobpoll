@@ -11,7 +11,7 @@ export class ServiceService {
 
   // Form Validation For create poll form
   // Custom validation for poll question that needs to be at least 2 words
-  ValidateSize(form: FormControl) {
+  ValidateQuestion(form: FormControl) {
     let poll_option_input = form.value;
     poll_option_input = poll_option_input.trim(); // removes spaces from left and right of string
     poll_option_input = poll_option_input.replace(/\s\s+/g, ' '); // removes extra spaces in between words
@@ -37,13 +37,12 @@ export class ServiceService {
 
   }
 
-  addPoll(poll, callback: (poll) => void ){
-    poll["pollIsPrivate"] = 1
-      this.firebase.collection("polls").add(poll).then(pollDocument => {
+  addPoll(poll_form, callback: (poll) => void ){
+    poll_form = this.remove_empty_options_from_form(poll_form);
+    poll_form["pollIsPrivate"] = 1
+      this.firebase.collection("polls").add(poll_form).then(pollDocument => {
         callback(pollDocument)
       })
-
-
   }
 
   getPollById(pollId){
@@ -64,5 +63,26 @@ export class ServiceService {
         return data;
       }))
     )
+  }
+
+  // String Helpers
+  remove_spaces_from_string(input: string): string {
+    input = input.trim(); // removes spaces from left and right of string
+    input = input.replace(/\s\s+/g, ' '); // removes extra spaces in between words
+    return input
+  }
+
+  // Form Helpers
+  remove_empty_options_from_form(form) {
+    let options = form.options;
+    let _options = [];
+    for (let option of options) {
+      option = this.remove_spaces_from_string(option);
+      if (option.length > 0) {
+        _options.push(option)
+      }
+    }
+    form.options = _options;
+    return form;
   }
 }

@@ -34,7 +34,7 @@ export class CreatePollFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.mainForm = new FormGroup({
-      pollQuestion : new FormControl('', [this.service.ValidateSize]),
+      pollQuestion : new FormControl('', [this.service.ValidateQuestion]),
       options: new FormArray([
         new FormControl('', [Validators.required, this.service.ValidateOptions]),
         new FormControl('', [Validators.required, this.service.ValidateOptions]),
@@ -56,17 +56,30 @@ export class CreatePollFormComponent implements OnInit {
 
   addOption(){
     if (this.options.length < 15) {
-      this.options.push(new FormControl('', [this.service.ValidateOptions]));
+      this.options.push(new FormControl(''));
     }
   }
 
   createPoll(){
     if (this.mainForm.valid) {
 
+      // console.log("MY FORM VALUES", this.mainForm.value);
+      // let options = this.mainForm.value.options;
+      // let _options = [];
+      // for (let option of options) {
+      //   console.log(option, option.length);
+      //   if (option.length > 0) {
+      //     _options.push(option)
+      //   }
+      // }
+      // this.mainForm.value.options = _options;
+      //
+      // console.log("Modified Form", this.mainForm.value);
 
       // this.service.add(this.mainForm.value);
       // this.firestore.collection("poll").add(this.mainForm.value);
       // this.router.navigate(['/success']);
+
 
         this.service.addPoll(this.mainForm.value, poll => {
           console.log("Inside the Create Poll Component. Poll ID=", poll.id);
@@ -109,6 +122,5 @@ export class CreatePollFormComponent implements OnInit {
       }
     })
   }
-
 
 }
