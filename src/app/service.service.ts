@@ -38,7 +38,7 @@ export class ServiceService {
 
 
   addPoll(poll_form, callback: (poll) => void ){
-    poll_form = this.remove_empty_options_from_form(poll_form);
+    poll_form = this.removeEmptyOptionsFromForm(poll_form);
     poll_form["pollIsPrivate"] = 1
       this.firebase.collection("polls").add(poll_form).then(pollDocument => {
         callback(pollDocument)
@@ -46,18 +46,18 @@ export class ServiceService {
   }
 
   // String Helpers
-  remove_spaces_from_string(input: string): string {
+  removeSpacesFromString(input: string): string {
     input = input.trim(); // removes spaces from left and right of string
     input = input.replace(/\s\s+/g, ' '); // removes extra spaces in between words
     return input
   }
 
   // Form Helpers
-  remove_empty_options_from_form(form) {
+  removeEmptyOptionsFromForm(form) {
     let options = form.options;
     let _options = [];
     for (let option of options) {
-      option = this.remove_spaces_from_string(option);
+      option = this.removeSpacesFromString(option);
       if (option.length > 0) {
         _options.push(option)
       }
