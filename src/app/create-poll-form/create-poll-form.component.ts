@@ -4,6 +4,8 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {CreatePollSubmitWarningComponent} from "../create-poll-submit-warning/create-poll-submit-warning.component";
 import {Router} from "@angular/router";
 import {ServiceService} from "../service.service";
+import * as empty from "firebase/empty-import";
+import {not} from "rxjs/internal-compatibility";
 
 @Component({
   selector: 'app-create-poll-form',
@@ -34,8 +36,8 @@ export class CreatePollFormComponent implements OnInit {
     this.mainForm = new FormGroup({
       pollQuestion : new FormControl('', [this.service.ValidateSize]),
       options: new FormArray([
-        new FormControl('', [Validators.required]),
-        new FormControl('', [Validators.required]),
+        new FormControl('', [Validators.required, this.service.ValidateOptions]),
+        new FormControl('', [Validators.required, this.service.ValidateOptions]),
         new FormControl('', ),
         new FormControl('', ),
         new FormControl('', )
@@ -54,24 +56,25 @@ export class CreatePollFormComponent implements OnInit {
 
   addOption(){
     if (this.options.length < 15) {
-      this.options.push(new FormControl(''));
+      this.options.push(new FormControl('', [this.service.ValidateOptions]));
     }
   }
 
   createPoll(){
-    if (this.mainForm.valid){
+    if (this.mainForm.valid) {
 
 
       // this.service.add(this.mainForm.value);
       // this.firestore.collection("poll").add(this.mainForm.value);
       // this.router.navigate(['/success']);
 
-      this.service.addPoll(this.mainForm.value, poll => {
-        console.log("Inside the Create Poll Component. Poll ID=", poll.id);
-        this.router.navigate(['/success/' + poll.id]);
-      });
+        this.service.addPoll(this.mainForm.value, poll => {
+          console.log("Inside the Create Poll Component. Poll ID=", poll.id);
+          this.router.navigate(['/success/' + poll.id]);
+        });
 
-    }
+      }
+
     else {
       this.modalService.open(CreatePollSubmitWarningComponent, {centered: true, scrollable: true, windowClass: 'mobpoll-modal'});
       // modalRef.componentInstance.name = 'World';

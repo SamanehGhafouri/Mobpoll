@@ -24,6 +24,14 @@ export class ServiceService {
       invalidSize: true
     } : null;
   }
+  ValidateOptions(form: FormControl) {
+    let poll_option_input = form.value;
+    poll_option_input = poll_option_input.trim(); // removes spaces from left and right of string
+
+    return poll_option_input.length < 1 ? {
+      invalidSize: true
+    } : null;
+  }
 
   constructor(private firebase: AngularFirestore) {
 
