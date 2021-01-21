@@ -4,8 +4,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {CreatePollSubmitWarningComponent} from "../create-poll-submit-warning/create-poll-submit-warning.component";
 import {Router} from "@angular/router";
 import {ServiceService} from "../service.service";
-import * as empty from "firebase/empty-import";
-import {not} from "rxjs/internal-compatibility";
+
 
 @Component({
   selector: 'app-create-poll-form',
@@ -63,29 +62,10 @@ export class CreatePollFormComponent implements OnInit {
   createPoll(){
     if (this.mainForm.valid) {
 
-      // console.log("MY FORM VALUES", this.mainForm.value);
-      // let options = this.mainForm.value.options;
-      // let _options = [];
-      // for (let option of options) {
-      //   console.log(option, option.length);
-      //   if (option.length > 0) {
-      //     _options.push(option)
-      //   }
-      // }
-      // this.mainForm.value.options = _options;
-      //
-      // console.log("Modified Form", this.mainForm.value);
-
-      // this.service.add(this.mainForm.value);
-      // this.firestore.collection("poll").add(this.mainForm.value);
-      // this.router.navigate(['/success']);
-
-
         this.service.addPoll(this.mainForm.value, poll => {
           console.log("Inside the Create Poll Component. Poll ID=", poll.id);
           this.router.navigate(['/success/' + poll.id]);
         });
-
       }
 
     else {

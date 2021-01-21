@@ -9,6 +9,8 @@ import {FormControl} from "@angular/forms";
 })
 export class ServiceService {
 
+  constructor(private firebase: AngularFirestore) {}
+
   // Form Validation For create poll form
   // Custom validation for poll question that needs to be at least 2 words
   ValidateQuestion(form: FormControl) {
@@ -33,9 +35,7 @@ export class ServiceService {
     } : null;
   }
 
-  constructor(private firebase: AngularFirestore) {
 
-  }
 
   addPoll(poll_form, callback: (poll) => void ){
     poll_form = this.remove_empty_options_from_form(poll_form);
@@ -43,26 +43,6 @@ export class ServiceService {
       this.firebase.collection("polls").add(poll_form).then(pollDocument => {
         callback(pollDocument)
       })
-  }
-
-  getPollById(pollId){
-    return this.firebase.collection("polls").doc(pollId).get();
-  }
-
-  getPolls(){
-
-    // For simple stuff use valueChanges() like you need just data in subcollection
-    // return this.firebase.collection("polls").valueChanges();
-
-    // For more complex: like need data and also the id that generated use snapshotChanges
-    // source: https://github.com/angular/angularfire/blob/master/docs/firestore/collections.md#snapshotchanges
-    return this.firebase.collection('polls').snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-        const data = a.payload.doc.data();
-        data['id'] = a.payload.doc.id;
-        return data;
-      }))
-    )
   }
 
   // String Helpers
@@ -85,4 +65,31 @@ export class ServiceService {
     form.options = _options;
     return form;
   }
+
+
+
+  getPollById(pollId){
+    return this.firebase.collection("polls").doc(pollId).get();
+  }
+
+
+
+  getPolls(){
+    // For simple stuff use valueChanges() like you need just data in subcollection
+    // return this.firebase.collection("polls").valueChanges();
+
+    // For more complex: like need data and also the id that generated use snapshotChanges
+    // source: https://github.com/angular/angularfire/blob/master/docs/firestore/collections.md#snapshotchanges
+    return this.firebase.collection('polls').snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data();
+        data['id'] = a.payload.doc.id;
+        return data;
+      }))
+    )
+  }
+
+
+
+
 }
