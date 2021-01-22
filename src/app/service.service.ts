@@ -40,9 +40,23 @@ export class ServiceService {
   addPoll(poll_form, callback: (poll) => void ){
     poll_form = this.removeEmptyOptionsFromForm(poll_form);
     poll_form["pollIsPrivate"] = 1
+
+    // Each options has a set of id, name, and tally
+    const options = []
+    poll_form["options"].forEach(function (option, i) {
+      option = {
+        optionId: i,
+        optionName: option,
+        tally: 0
+      }
+      options.push(option);
+    })
+    poll_form["options"] = options;
+
       this.firebase.collection("polls").add(poll_form).then(pollDocument => {
         callback(pollDocument)
       })
+
   }
 
   // String Helpers
