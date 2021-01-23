@@ -1,16 +1,15 @@
 <form [formGroup]="">
   <div>
     <label class="take-poll-question">{{pollQuestion}}</label>
-    <label *ngFor="let option of pollOptions" style="width: 100%; padding: 0px; margin-bottom: 10px">
+    <label *ngFor="let name of optionName" style="width: 100%; padding: 0px; margin-bottom: 10px">
       <div style="display: table">
         <div class="take-poll-option-check-box">
         <input type="checkbox">
         </div>
         <div class="take-poll-option-text">
           <label class="take-poll-option-text-label">
-            {{option}}
+            {{name}}
           </label>
-
         </div>
       </div>
     </label>
