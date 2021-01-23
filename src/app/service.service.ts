@@ -43,16 +43,15 @@ export class ServiceService {
 
     // Each options has a set of id, name, and tally
     const options = []
-    poll_form["options"].forEach(function (option, i) {
+    poll_form["options"].forEach(function (option, index) {
       option = {
-        optionId: i,
+        optionId: index,
         optionName: option,
         tally: 0
       }
       options.push(option);
     })
     poll_form["options"] = options;
-
       this.firebase.collection("polls").add(poll_form).then(pollDocument => {
         callback(pollDocument)
       })
