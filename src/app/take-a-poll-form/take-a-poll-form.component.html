@@ -1,14 +1,14 @@
 <form [formGroup]="optionForm" (ngSubmit)="submitVote()">
   <div>
     <label class="take-poll-question">{{pollQuestion}}</label>
-    <label *ngFor="let optionName of optionNames" style="width: 100%; padding: 0px; margin-bottom: 10px">
+    <label *ngFor="let option of pollOptions" style="width: 100%; padding: 0px; margin-bottom: 10px">
       <div style="display: table">
         <div class="take-poll-option-check-box">
-        <input type="checkbox" (change)="selectedOption(optionName, $event.target.checked)">
+        <input type="checkbox" (change)="selectedOption(option.optionId, $event.target.checked)">
         </div>
         <div class="take-poll-option-text">
           <label class="take-poll-option-text-label">
-            {{optionName}}
+            {{option.optionName}}
           </label>
         </div>
       </div>

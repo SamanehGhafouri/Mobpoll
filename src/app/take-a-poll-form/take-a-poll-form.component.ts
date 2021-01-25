@@ -60,14 +60,12 @@ export class TakeAPollFormComponent implements OnInit {
 
   }
 
-  selectedOption(name: any, isChecked: boolean){
-    let count = 0
-    this.pollOptions.forEach(function (optionName, tally) {
-      name = optionName["tally"]
-      if (isChecked){
-        optionName["tally"] ++;
-        console.log("show me the updated tally ", optionName["tally"])
+  selectedOption(id: any, isChecked: boolean){
 
+    this.pollOptions.forEach(function (option, tally) {
+      if (option["optionId"] === id){
+        option["tally"] ++
+        console.log("this is updated tally for this item", option["tally"])
       }
     })
   }
