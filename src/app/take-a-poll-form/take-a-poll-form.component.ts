@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ServiceService} from "../service.service";
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {animate} from "@angular/animations";
+
 
 @Component({
   selector: 'app-take-a-poll-form',
@@ -42,6 +42,8 @@ export class TakeAPollFormComponent implements OnInit {
 
         for(let option of this.pollOptions){
 
+          console.log("give me the name and its id?", option["optionName"], option["optionId"])
+
           option_names.push(option["optionName"])
           this.optionNames = option_names
 
@@ -50,6 +52,7 @@ export class TakeAPollFormComponent implements OnInit {
 
           option_tallies.push(option["tally"])
           this.optionTally = option_tallies
+
         }
         console.log("show me the array of option names? ", this.optionId ,this.optionNames, this.optionTally)
       })
@@ -57,19 +60,16 @@ export class TakeAPollFormComponent implements OnInit {
 
   }
 
-  onChange(name: any, isChecked: boolean){
-    const option_names = (this.optionForm.controls.name as FormArray);
-    if (isChecked){
-      option_names.push(new FormControl(name));
+  selectedOption(name: any, isChecked: boolean){
+    let count = 0
+    this.pollOptions.forEach(function (optionName, tally) {
+      name = optionName["tally"]
+      if (isChecked){
+        optionName["tally"] ++;
+        console.log("show me the updated tally ", optionName["tally"])
 
-    }
-    else {
-      const index = option_names.controls.findIndex(x => x.value === name);
-      option_names.removeAt(index);
-    }
-  }
-  selectedOption(){
-
+      }
+    })
   }
 
 
@@ -82,7 +82,7 @@ export class TakeAPollFormComponent implements OnInit {
 
   submitVote(){
 
-    console.log("the vote is submitted", this.optionForm.value.name);
+    console.log("the vote is submitted");
     // console.warn("The Vote is Submitted");
 
   }
