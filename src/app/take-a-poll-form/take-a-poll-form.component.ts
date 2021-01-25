@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ServiceService} from "../service.service";
-import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {animate} from "@angular/animations";
 
 @Component({
@@ -13,12 +13,16 @@ export class TakeAPollFormComponent implements OnInit {
   pollId : string;
   pollQuestion : string;
   pollOptions: [];
-  mainForm: FormGroup;
+  optionForm: FormGroup;
   optionId: any[]
-  optionName: any[]
+  optionNames: any[]
   optionTally: any
+  optionselectedCount: number;
 
-  constructor(private route: ActivatedRoute, private service: ServiceService) {
+
+
+
+  constructor(private route: ActivatedRoute, private service: ServiceService, private fb:FormBuilder) {
     //Get poll Id from url
     route.params.subscribe(pollId =>{
       this.pollId = pollId['pollId']
@@ -37,9 +41,9 @@ export class TakeAPollFormComponent implements OnInit {
         let option_tallies = []
 
         for(let option of this.pollOptions){
-          console.log("I wanna see this? " ,option["optionName"])
+
           option_names.push(option["optionName"])
-          this.optionName = option_names
+          this.optionNames = option_names
 
           option_ids.push(option["optionId"])
           this.optionId = option_ids
@@ -47,29 +51,40 @@ export class TakeAPollFormComponent implements OnInit {
           option_tallies.push(option["tally"])
           this.optionTally = option_tallies
         }
-        console.log("show me the array of option names? ", this.optionId ,this.optionName, this.optionTally)
-
-
-
+        console.log("show me the array of option names? ", this.optionId ,this.optionNames, this.optionTally)
       })
-
     })
 
   }
 
+  onChange(name: any, isChecked: boolean){
+    const option_names = (this.optionForm.controls.name as FormArray);
+    if (isChecked){
+      option_names.push(new FormControl(name));
+
+    }
+    else {
+      const index = option_names.controls.findIndex(x => x.value === name);
+      option_names.removeAt(index);
+    }
+  }
+  selectedOption(){
+
+  }
+
+
   ngOnInit(): void {
 
-    // let options = this.pollOptions;
-    // this.mainForm = new FormGroup({
-    //   this.options: new FormArray([
-    //     new FormControl(''),
-    //     new FormControl(''),
-    //     new FormControl(''),
-    //     new FormControl(''),
-    //     new FormControl('')
-    //   ])
-    //
-    // });
+    this.optionForm = this.fb.group({
+      name: this.fb.array([])
+    })
+  }
+
+  submitVote(){
+
+    console.log("the vote is submitted", this.optionForm.value.name);
+    // console.warn("The Vote is Submitted");
+
   }
 
 }

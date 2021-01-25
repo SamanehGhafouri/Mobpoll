@@ -1,20 +1,20 @@
-<form [formGroup]="">
+<form [formGroup]="optionForm" (submit)="submitVote()">
   <div>
     <label class="take-poll-question">{{pollQuestion}}</label>
-    <label *ngFor="let name of optionName" style="width: 100%; padding: 0px; margin-bottom: 10px">
+    <label *ngFor="let optionName of optionNames" style="width: 100%; padding: 0px; margin-bottom: 10px">
       <div style="display: table">
         <div class="take-poll-option-check-box">
-        <input type="checkbox">
+        <input type="checkbox" (change)="onChange(optionName, $event.target.checked)">
         </div>
         <div class="take-poll-option-text">
           <label class="take-poll-option-text-label">
-            {{name}}
+            {{optionName}}
           </label>
         </div>
       </div>
     </label>
   </div>
   <div class="create-poll-submit-button">
-    <input type="submit" class="generic_submit_button" value="Submit Vote">
+    <input  type="submit" class="generic_submit_button" value="Submit Vote">
   </div>
 </form>

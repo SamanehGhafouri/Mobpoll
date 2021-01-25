@@ -10,7 +10,7 @@ import { MoreComponent } from './more/more.component';
 import { PublicPollsComponent } from './public-polls/public-polls.component';
 import { ContatinerComponent } from './contatiner/contatiner.component';
 import { CreatePollFormComponent } from './create-poll-form/create-poll-form.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CreatePollSubmitWarningComponent } from './create-poll-submit-warning/create-poll-submit-warning.component';
 import { SuccessPollPageComponent } from './success-poll-page/success-poll-page.component';
 import { CreatePollHelpComponent } from './create-poll-help/create-poll-help.component';
@@ -55,17 +55,17 @@ import { PollResultsComponent } from './poll-results/poll-results.component';
 
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    ClipboardModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        ClipboardModule,
+        FormsModule
 
 
-
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
