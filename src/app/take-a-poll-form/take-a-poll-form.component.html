@@ -4,7 +4,7 @@
     <label *ngFor="let option of pollOptions" style="width: 100%; padding: 0px; margin-bottom: 10px">
       <div style="display: table">
         <div class="take-poll-option-check-box">
-        <input type="checkbox" (change)="selectedOption(option.optionId, $event.target.checked)">
+        <input type="checkbox" [value]="option.optionId" (change)="onCheckboxChange($event)">
         </div>
         <div class="take-poll-option-text">
           <label class="take-poll-option-text-label">

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ServiceService} from "../service.service";
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {Form, FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 
 @Component({
@@ -10,21 +10,18 @@ import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angul
   styleUrls: ['./take-a-poll-form.component.css']
 })
 export class TakeAPollFormComponent implements OnInit {
-  pollId : string;
-  pollQuestion : string;
+  pollId: string;
+  pollQuestion: string;
   pollOptions: [];
   optionForm: FormGroup;
   optionId: any[]
   optionNames: any[]
   optionTally: any
-  optionselectedCount: number;
 
 
-
-
-  constructor(private route: ActivatedRoute, private service: ServiceService, private fb:FormBuilder) {
+  constructor(private route: ActivatedRoute, private service: ServiceService, private formBuilder: FormBuilder) {
     //Get poll Id from url
-    route.params.subscribe(pollId =>{
+    route.params.subscribe(pollId => {
       this.pollId = pollId['pollId']
       console.log("is that getting the poll Id ----> ", this.pollId)
 
@@ -40,7 +37,7 @@ export class TakeAPollFormComponent implements OnInit {
         let option_ids = []
         let option_tallies = []
 
-        for(let option of this.pollOptions){
+        for (let option of this.pollOptions) {
 
           console.log("give me the name and its id?", option["optionName"], option["optionId"])
 
@@ -52,37 +49,32 @@ export class TakeAPollFormComponent implements OnInit {
 
           option_tallies.push(option["tally"])
           this.optionTally = option_tallies
-
         }
-        console.log("show me the array of option names? ", this.optionId ,this.optionNames, this.optionTally)
+        console.log("show me the array of option names? ", this.optionId, this.optionNames, this.optionTally)
       })
-    })
+    });
 
-  }
-
-  selectedOption(id: any, isChecked: boolean){
-
-    this.pollOptions.forEach(function (option, tally) {
-      if (option["optionId"] === id){
-        option["tally"] ++
-        console.log("this is updated tally for this item", option["tally"])
-      }
+    //Form Builder
+    this.optionForm = this.formBuilder.group({
+      options: this.formBuilder.array([])
     })
   }
-
+  onCheckboxChange(e){
+    const options: FormArray = this.optionForm.get('options') as FormArray;
+    if (e.target.checked){
+      options.push(new FormControl(e.target.value));
+    } else {
+      const index = options.controls.findIndex(x => x.value === e.target.value);
+      options.removeAt(index);
+    }
+  }
 
   ngOnInit(): void {
 
-    this.optionForm = this.fb.group({
-      name: this.fb.array([])
-    })
   }
 
-  submitVote(){
-
-    console.log("the vote is submitted");
-    // console.warn("The Vote is Submitted");
-
+  submitVote() {
+    console.log("the new_option form has: ", this.optionForm.value.options)
   }
 
 }
