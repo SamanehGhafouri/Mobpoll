@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFirestore} from "@angular/fire/firestore";
 import {map} from "rxjs/operators";
 import {FormControl} from "@angular/forms";
+import * as firebase from 'firebase/app';
 
 
 @Injectable({
@@ -9,7 +10,8 @@ import {FormControl} from "@angular/forms";
 })
 export class ServiceService {
 
-  constructor(private firebase: AngularFirestore) {}
+  constructor(private firebase: AngularFirestore) {
+  }
 
   // Form Validation For create poll form
   // Custom validation for poll question that needs to be at least 2 words
@@ -26,6 +28,7 @@ export class ServiceService {
       invalidSize: true
     } : null;
   }
+
   ValidateOptions(form: FormControl) {
     let poll_option_input = form.value;
     poll_option_input = poll_option_input.trim(); // removes spaces from left and right of string
@@ -35,9 +38,8 @@ export class ServiceService {
     } : null;
   }
 
-
   // Add poll
-  addPoll(poll_form, callback: (poll) => void ){
+  addPoll(poll_form, callback: (poll) => void) {
     poll_form = this.removeEmptyOptionsFromForm(poll_form);
     poll_form["pollIsPrivate"] = 1
     poll_form["total_votes"] = 0
@@ -53,16 +55,20 @@ export class ServiceService {
       options.push(option);
     })
     poll_form["options"] = options;
-      this.firebase.collection("polls").add(poll_form).then(pollDocument => {
-        callback(pollDocument)
-      })
-
+    this.firebase.collection("polls").add(poll_form).then(pollDocument => {
+      callback(pollDocument)
+    })
   }
 
-  updateTally(tally){
-    let options = this.firebase.collection('polls').doc('options')["tally"].update(tally);
-    console.log("is this update for tally???????????", tally)
+  // Update the tally if its clicked by 1
+  updateTally(pollId, pollOptions, optionsChecked) {
 
+    for (let checked of optionsChecked) {
+      console.log("Before", pollOptions[checked]);
+      pollOptions[checked].tally++;
+      console.log("After", pollOptions[checked]);
+    }
+    this.firebase.collection('polls').doc(pollId).update({options: pollOptions});
   }
 
   // String Helpers
@@ -86,15 +92,11 @@ export class ServiceService {
     return form;
   }
 
-
-
-  getPollById(pollId){
+  getPollById(pollId) {
     return this.firebase.collection("polls").doc(pollId).get();
   }
 
-
-
-  getPolls(){
+  getPolls() {
     // For simple stuff use valueChanges() like you need just data in subcollection
     // return this.firebase.collection("polls").valueChanges();
 

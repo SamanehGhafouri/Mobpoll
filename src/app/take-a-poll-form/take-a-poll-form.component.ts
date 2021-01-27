@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ServiceService} from "../service.service";
-import {Form, FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {AngularFirestore} from "@angular/fire/firestore";
 
 
 @Component({
@@ -19,7 +20,7 @@ export class TakeAPollFormComponent implements OnInit {
   optionTally: any
 
 
-  constructor(private route: ActivatedRoute, private service: ServiceService, private formBuilder: FormBuilder) {
+  constructor(private route: ActivatedRoute, private service: ServiceService, private formBuilder: FormBuilder, private firestore: AngularFirestore) {
     //Get poll Id from url
     route.params.subscribe(pollId => {
       this.pollId = pollId['pollId']
@@ -30,7 +31,6 @@ export class TakeAPollFormComponent implements OnInit {
         const poll = document.data()
         this.pollQuestion = poll['pollQuestion']
         this.pollOptions = poll['options']
-        console.log("what is the poll question? --->  ", this.pollQuestion)
 
         // This is getting info from options in our database such as optionName, optionId, tally
         let option_names = []
@@ -38,8 +38,6 @@ export class TakeAPollFormComponent implements OnInit {
         let option_tallies = []
 
         for (let option of this.pollOptions) {
-
-          console.log("give me the name and its id?", option["optionName"], option["optionId"])
 
           option_names.push(option["optionName"])
           this.optionNames = option_names
@@ -50,7 +48,6 @@ export class TakeAPollFormComponent implements OnInit {
           option_tallies.push(option["tally"])
           this.optionTally = option_tallies
         }
-        console.log("show me the array of option names? ", this.optionId, this.optionNames, this.optionTally)
       })
     });
 
@@ -59,9 +56,10 @@ export class TakeAPollFormComponent implements OnInit {
       options: this.formBuilder.array([])
     })
   }
-  onCheckboxChange(e){
+
+  onCheckboxChange(e) {
     const options: FormArray = this.optionForm.get('options') as FormArray;
-    if (e.target.checked){
+    if (e.target.checked) {
       options.push(new FormControl(e.target.value));
     } else {
       const index = options.controls.findIndex(x => x.value === e.target.value);
@@ -69,12 +67,13 @@ export class TakeAPollFormComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   submitVote() {
-    console.log("the new_option form has: ", this.optionForm.value.options)
+    this.service.updateTally(
+      this.pollId,
+      this.pollOptions,
+      this.optionForm.value.options);
   }
 
 }
