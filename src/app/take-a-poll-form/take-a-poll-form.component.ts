@@ -14,6 +14,7 @@ export class TakeAPollFormComponent implements OnInit {
   pollId: string;
   pollQuestion: string;
   pollOptions: [];
+  totalVotes: number;
   optionForm: FormGroup;
   optionId: any[]
   optionNames: any[]
@@ -31,6 +32,7 @@ export class TakeAPollFormComponent implements OnInit {
         const poll = document.data()
         this.pollQuestion = poll['pollQuestion']
         this.pollOptions = poll['options']
+        this.totalVotes = poll['totalVotes']
 
         // This is getting info from options in our database such as optionName, optionId, tally
         let option_names = []
@@ -70,10 +72,9 @@ export class TakeAPollFormComponent implements OnInit {
   ngOnInit(): void {}
 
   submitVote() {
-    this.service.updateTally(
-      this.pollId,
-      this.pollOptions,
-      this.optionForm.value.options);
+    this.service.updateTally(this.pollId, this.pollOptions, this.optionForm.value.options);
+    this.service.updateTotalVotes(this.pollId, this.totalVotes);
+
   }
 
 }

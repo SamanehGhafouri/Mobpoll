@@ -71,6 +71,15 @@ export class ServiceService {
     this.firebase.collection('polls').doc(pollId).update({options: pollOptions});
   }
 
+  // Update totalVotes
+  updateTotalVotes(pollId, totalVotes){
+    console.log("total votes before: ", totalVotes)
+    totalVotes ++;
+    console.log("totalVotes after:", totalVotes);
+    this.firebase.collection('polls').doc(pollId).update({totalVotes: totalVotes});
+    console.log("what is the total votes? ", totalVotes)
+  }
+
   // String Helpers
   removeSpacesFromString(input: string): string {
     input = input.trim(); // removes spaces from left and right of string
