@@ -42,7 +42,7 @@ export class ServiceService {
   addPoll(poll_form, callback: (poll) => void) {
     poll_form = this.removeEmptyOptionsFromForm(poll_form);
     poll_form["pollIsPrivate"] = 1
-    poll_form["total_votes"] = 0
+    poll_form["totalVotes"] = 0
 
     // Each options has a set of id, name, and tally
     const options = []
