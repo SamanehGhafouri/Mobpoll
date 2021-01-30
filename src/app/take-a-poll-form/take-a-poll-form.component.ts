@@ -73,7 +73,7 @@ export class TakeAPollFormComponent implements OnInit {
 
   submitVote() {
     this.service.updateTally(this.pollId, this.pollOptions, this.optionForm.value.options);
-    this.service.updateTotalVotes(this.pollId, this.totalVotes);
+    this.service.updateAtomicTotalVotes(this.pollId);
 
   }
 

@@ -2,7 +2,10 @@ import {Injectable} from '@angular/core';
 import {AngularFirestore} from "@angular/fire/firestore";
 import {map} from "rxjs/operators";
 import {FormControl} from "@angular/forms";
-import * as firebase from 'firebase/app';
+import firebase from "firebase";
+
+
+
 
 
 @Injectable({
@@ -71,13 +74,24 @@ export class ServiceService {
     this.firebase.collection('polls').doc(pollId).update({options: pollOptions});
   }
 
-  // Update totalVotes
-  updateTotalVotes(pollId, totalVotes){
-    console.log("total votes before: ", totalVotes)
-    totalVotes ++;
-    console.log("totalVotes after:", totalVotes);
-    this.firebase.collection('polls').doc(pollId).update({totalVotes: totalVotes});
-    console.log("what is the total votes? ", totalVotes)
+  // Atomic update totalVotes
+  updateAtomicTotalVotes(pollId){
+    let pollDocumentRef = firebase.firestore().collection('polls').doc(pollId);
+    return firebase.firestore().runTransaction(function (transaction) {
+      return transaction.get(pollDocumentRef).then(function (pollDoc)
+      {
+        if (!pollDoc.exists){
+          throw 'not exist';
+        }
+        let totalVotes = pollDoc.data().totalVotes + 1;
+        transaction.update(pollDocumentRef, {totalVotes: totalVotes});
+      });
+    }).then(function () {
+      console.log("transaction successfully committed!" );
+
+    }).catch(function (error) {
+      console.log("transaction failed", error);
+    })
   }
 
   // String Helpers
