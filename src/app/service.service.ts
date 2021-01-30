@@ -64,14 +64,35 @@ export class ServiceService {
   }
 
   // Update the tally if its clicked by 1
-  updateTally(pollId, pollOptions, optionsChecked) {
+  // updateTally(pollId, pollOptions, optionsChecked) {
+  //
+  //   for (let checked of optionsChecked) {
+  //     console.log("Before", pollOptions[checked]);
+  //     pollOptions[checked].tally++;
+  //     console.log("After", pollOptions[checked]);
+  //   }
+  //   this.firebase.collection('polls').doc(pollId).update({options: pollOptions});
+  // }
+  updateAtomicTally(pollId, optionsChecked){
+    let pollDocumentRef = firebase.firestore().collection('polls').doc(pollId);
+    return firebase.firestore().runTransaction(function (transaction) {
+      return transaction.get(pollDocumentRef).then(function (pollDoc)
+      {
+        if (!pollDoc.exists){
+          throw 'not exist';
+        }
+        let options = pollDoc.data().options;
+        for (let checked of optionsChecked){
+          options[checked].tally++;
+        }
+        transaction.update(pollDocumentRef, {options: options})
+      })
+    }).then(function () {
+      console.log("tally update transaction successfully committed")
+    }).catch(function (error) {
+      console.log("transaction tally failed", error);
+    })
 
-    for (let checked of optionsChecked) {
-      console.log("Before", pollOptions[checked]);
-      pollOptions[checked].tally++;
-      console.log("After", pollOptions[checked]);
-    }
-    this.firebase.collection('polls').doc(pollId).update({options: pollOptions});
   }
 
   // Atomic update totalVotes

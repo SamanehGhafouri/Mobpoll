@@ -72,7 +72,7 @@ export class TakeAPollFormComponent implements OnInit {
   ngOnInit(): void {}
 
   submitVote() {
-    this.service.updateTally(this.pollId, this.pollOptions, this.optionForm.value.options);
+    this.service.updateAtomicTally(this.pollId, this.optionForm.value.options);
     this.service.updateAtomicTotalVotes(this.pollId);
 
   }
