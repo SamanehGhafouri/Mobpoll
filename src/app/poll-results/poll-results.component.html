@@ -1,9 +1,9 @@
 <div>
-  <label class="poll-question">poll question</label>
+  <label class="poll-question">{{pollQuestion}}</label>
   <div style="margin-top: 10px; margin-bottom: 20px">
-    <div style="display: table; width: 100%; padding-bottom: 20px">
-      <div class="poll-results-options-div">
-        <label class="take-poll-options-label">First Option</label>
+    <div style="display: table; width: 100%; padding-bottom: 20px" *ngFor="let option of pollOptions">
+      <div class="poll-results-options-div" >
+        <label class="take-poll-options-label">{{option.optionName}}</label>
         <table style="width: 100%">
           <tr>
             <td class="td-bar"></td>
@@ -17,7 +17,7 @@
       Total Votes:
     </label>
     <label class="poll-number-label">
-      20
+      {{totalVotes}}
     </label>
   </div>
 </div>
