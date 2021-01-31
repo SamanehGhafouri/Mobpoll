@@ -2,11 +2,7 @@ import {Injectable} from '@angular/core';
 import {AngularFirestore} from "@angular/fire/firestore";
 import {map} from "rxjs/operators";
 import {FormControl} from "@angular/forms";
-import firebase from "firebase";
-
-
-
-
+import firebase from "firebase/app";
 
 @Injectable({
   providedIn: 'root'
