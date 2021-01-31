@@ -10,7 +10,7 @@ export class TakeAPollComponent implements OnInit {
 
   // if poll taken = true ---> show Poll Results! page (poll is taken)
   // if poll taken = false ---> show Take A Poll! page (poll is not taken)
-  taken = false;
+  taken = true;
 
   constructor() { }
 
