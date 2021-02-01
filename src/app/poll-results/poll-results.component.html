@@ -10,7 +10,7 @@
                        width: {{((option['tally'] / totalVotes) * 100).toFixed()}}%;
                        height: 10px;
                        background-image: none;
-                       background-color: #FF9E13;
+                       background-color: {{getCustomColor(option.optionId)}};
                        box-shadow: none;
                        -webkit-box-shadow: none;
                        border-radius: 10px 10px 10px 10px;
