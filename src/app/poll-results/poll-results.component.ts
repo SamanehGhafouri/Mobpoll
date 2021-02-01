@@ -13,9 +13,7 @@ export class PollResultsComponent implements OnInit {
   pollQuestion: string;
   pollOptions: [];
   totalVotes: number;
-  optionId: any[]
-  optionNames: any[]
-  optionTally: any
+
 
   constructor(private route: ActivatedRoute, private service: ServiceService, ) {
     //Get poll Id from url
@@ -29,23 +27,6 @@ export class PollResultsComponent implements OnInit {
         this.pollQuestion = poll['pollQuestion']
         this.pollOptions = poll['options']
         this.totalVotes = poll['totalVotes']
-
-        // This is getting info from options in our database such as optionName, optionId, tally
-        let option_names = []
-        let option_ids = []
-        let option_tallies = []
-
-        for (let option of this.pollOptions) {
-
-          option_names.push(option["optionName"])
-          this.optionNames = option_names
-
-          option_ids.push(option["optionId"])
-          this.optionId = option_ids
-
-          option_tallies.push(option["tally"])
-          this.optionTally = option_tallies
-        }
       })
     });
   }

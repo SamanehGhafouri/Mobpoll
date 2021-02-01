@@ -49,7 +49,7 @@ export class ServiceService {
       option = {
         optionId: index,
         optionName: option,
-        tally: 0
+        tally: 0,
       }
       options.push(option);
     })

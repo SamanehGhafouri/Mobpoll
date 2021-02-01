@@ -21,18 +21,6 @@
   padding-top: 3px;
   word-break: break-all;
 }
-.td-bar{
-  width: 59.3%;
-  height: 10px;
-  background-image: none;
-  background-color: rgb(65, 167, 251);
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  border-radius: 10px 10px 10px 10px;
-  -webkit-border-radius: 10px 10px 10px 10px;
-  -moz-border-radius: 10px 10px 10px 10px;
-  min-width: 20px;
-}
 .td-bar-percentage{
   font-family: Verdana;
   font-size: 15px;
