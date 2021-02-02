@@ -26,7 +26,7 @@
             <label for="file-input">
               <img src="assets/upload-pic-icon-orange.png" style="cursor: pointer">
             </label>
-            <input type="file" id="file-input" hidden>
+            <input type="file" id="file-input" (change)="onFileSelected($event)" hidden>
           </div>
         </div>
       </div>

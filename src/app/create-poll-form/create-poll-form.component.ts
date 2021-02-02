@@ -76,8 +76,12 @@ export class CreatePollFormComponent implements OnInit {
       this.validateFormArrayFields(this.options);
 
     }
+  }
+  onFileSelected(event){
+    console.log("the image selected", event);
 
   }
+
   //Validating FormGroup Fields (question)
   validateFormGroupField(formGroup: FormGroup){
     Object.keys(formGroup.controls).forEach(field => {
